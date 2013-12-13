@@ -1,0 +1,36 @@
+{
+  "name": "Corpo-Chat-Hub",
+  "version": "0.0.1",
+  "description": "The best module ever.",
+  "homepage": "https://github.com/vitoss/corpo-chat",
+  "bugs": "https://github.com/vitoss/corpo-chat/issues",
+  "author": {
+    "name": "Witold Wasilewski",
+    "email": "vitotao@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vitoss/corpo-chat"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "socket.io": "latest",
+    "express": "3.x"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-express-server": "~0.4.1",
+    "grunt-express": "~1.0.0-beta1",
+    "vows": "latest",
+    "grunt-vows": "latest",
+    "api-easy": "~0.3.8",
+    "grunt-exec": "~0.4.2",
+    "exec-sync": "~0.1.6"
+  }
+}
