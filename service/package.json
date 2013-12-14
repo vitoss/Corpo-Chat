@@ -19,7 +19,9 @@
   ],
   "dependencies": {
     "socket.io": "latest",
-    "express": "3.x"
+    "express": "3.x",
+    "mongoose": "latest",
+    "underscore": "latest"
   },
   "devDependencies": {
     "grunt": "latest",
@@ -31,6 +33,7 @@
     "grunt-vows": "latest",
     "api-easy": "~0.3.8",
     "grunt-exec": "~0.4.2",
-    "exec-sync": "~0.1.6"
+    "exec-sync": "~0.1.6",
+    "deferred-exec": "latest"
   }
 }

@@ -84,7 +84,7 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'jasmine_node']);
-  grunt.registerTask('server', [ 'express:dev', 'watch' ]);
+  grunt.registerTask('server', [ 'node:../lib/hub.js:8080', 'watch' ]);
   
   //tests and mongo
   grunt.loadTasks('tasks');
@@ -94,9 +94,9 @@ module.exports = function(grunt) {
   grunt.registerTask('test', 'node:../lib/hub.js:8080 vows')
   grunt.registerTask('check', 'jshint test');
 
-  var mongoStartCommand = 'mongo:start:localhost:27018:test:/Users/vito/Temporary/mongodbtest';
-  var mongoCleanCommand = 'mongo:clean:localhost:27018:test:/Users/vito/Temporary/mongodbtest';
-  var mongoStopCommand  = 'mongo:stop:localhost:27018:test:/Users/vito/Temporary/mongodbtest';
+  var mongoStartCommand = 'mongo:start:localhost:27018:test:/tmp/mongodbtest';
+  var mongoCleanCommand = 'mongo:clean:localhost:27018:test:/tmp/mongodbtest';
+  var mongoStopCommand  = 'mongo:stop:localhost:27018:test:/tmp/mongodbtest';
   grunt.registerTask('mongo_recycle', mongoStartCommand + ' ' + mongoCleanCommand + ' ' + mongoStopCommand);
   grunt.registerTask('mongo_start', mongoStartCommand);
   grunt.registerTask('mongo_clean', mongoCleanCommand);

@@ -10,7 +10,7 @@ exports.init = function(db) {
     //create schema
     EntitySchemaDefinition = {
       name : { type: String, required: true },
-      owner: { type:  ObjectId, required: true },
+      owner: { type:  mongoose.Schema.ObjectId, required: true },
       status: { type: Number, required: true },
       created_at : { type: Date },
     };

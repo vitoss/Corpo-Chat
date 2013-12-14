@@ -10,7 +10,8 @@
 
 var args = process.argv.splice(2),
     port = parseInt(args[0], 10) || 8881,
-    app = require('express')(),
+    express = require('express'),
+    app = express(),
     server = require('http').createServer(app),
     io = require('socket.io').listen(server),
     rest = require('./rest.js'),
@@ -20,10 +21,10 @@ var args = process.argv.splice(2),
 
 //CONFIGURATION
 //plugins
-app.use(express.bodyParser());
+//app.use(express.bodyParser());
 //app.use(express.methodOverride());
-app.use(express.responseTime());
-app.use(express.query());
+//app.use(express.responseTime());
+//app.use(express.query());
 
 //allow CORS
 app.use(function(req, res, next) {
@@ -49,4 +50,4 @@ sockets.bootstrap(io);
 
 exports.listen = function(port) { return server.listen(port); };
 
-server.listen(port);
+//server.listen(port);
