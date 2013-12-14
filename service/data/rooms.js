@@ -11,7 +11,7 @@ var userID = ObjectId();
 addUser({"_id": userID, "email": "admin@goo.com"});
 
 for(var i=0,l=200; i<l; i++) {
-    var room = {"_id": ObjectId(), "name": "Room 1", "status": 1, user_id};
+    var room = {"_id": ObjectId(), "name": "Room 1", "status": 1, "owner": userID};
 
     addRoom(room);
 }
