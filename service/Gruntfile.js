@@ -91,13 +91,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-vows");
   grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('test', 'node:../lib/hub.js:8080 vows')
+  grunt.registerTask('test', ['node:../lib/hub.js:8881', 'vows'])
   grunt.registerTask('check', 'jshint test');
 
   var mongoStartCommand = 'mongo:start:localhost:27018:test:/tmp/mongodbtest';
   var mongoCleanCommand = 'mongo:clean:localhost:27018:test:/tmp/mongodbtest';
   var mongoStopCommand  = 'mongo:stop:localhost:27018:test:/tmp/mongodbtest';
-  grunt.registerTask('mongo_recycle', mongoStartCommand + ' ' + mongoCleanCommand + ' ' + mongoStopCommand);
+  grunt.registerTask('mongo_recycle', ['mongo_start', 'mongo_clean', 'mongo_stop']);
   grunt.registerTask('mongo_start', mongoStartCommand);
   grunt.registerTask('mongo_clean', mongoCleanCommand);
   grunt.registerTask('mongo_stop', mongoStopCommand);

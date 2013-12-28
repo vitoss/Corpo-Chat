@@ -1,5 +1,5 @@
-ECHO get all dependencies
-npm install &
+echo get all dependencies
+npm install
 
-ECHO starting hub server
+echo starting hub server
 grunt server

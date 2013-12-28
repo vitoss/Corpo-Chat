@@ -40,7 +40,7 @@ suite.discuss('When using Room API')
       .expect('should return 5 entries from offset 5', function(err, res, body) {
         var result = JSON.parse(body);
         assert.equal(result.length, 5);
-        assert.equal(result[0].name, 'Room6');
+        assert.equal(result[0].name, 'Room 102');
       })
     .discuss('and sorting results')
     .get('rooms?offset=0&limit=30&sort=name,desc')
@@ -61,15 +61,6 @@ suite.discuss('When using Room API')
           assert.ok(result[i].name <= result[i+1].name);
         }
       })
-    .get('rooms?offset=0&limit=30&sort=surname,desc')
-      .expect(200)
-      .expect('should properly sort result by surname descending', function(err, res, body) {
-        var result = JSON.parse(body),
-            i, l = result.length;
-        for(i=0; i<l-1; i++) {
-          assert.ok(result[i].surname >= result[i+1].surname);
-        }
-      })
     .get('rooms?offset=0&limit=5&sort=name,desc')
       .expect(200)
       .expect('should properly sort result by name descending', function(err, res, body) {
@@ -87,7 +78,7 @@ suite.discuss('When using Room API')
         assert.equal(result.length, 0);
       })
     .discuss('and searching for many rooms')
-    .get('rooms?q=Room1')
+    .get('rooms?q=Room')
       .expect(200)
       .expect('should return non empty array', function(err, res, body) {
         var result = JSON.parse(body),
@@ -96,7 +87,7 @@ suite.discuss('When using Room API')
 
         //check search condition
         for(i=0, l=result.length; i<l; i++) {
-          assert.equal(result[i].name, 'Room');
+          assert.include(result[i].name, 'Room');
         }
 
         assert.ok(result.length > 0);
