@@ -145,7 +145,7 @@ suite.discuss('When using Room API')
         assert.equal(result[0].name, 'Special Room');
       })
     .next() //first add then remove
-    .discuss('and removing single patient')
+    .discuss('and removing single room')
       .setHeader('Content-Type', 'application/json')
       .put('rooms/63bffacbefb24c6bd59b3984', { name: 'Room 667', owner: '52bf3f4d1c28bea0ee723f63', status: 1})
       .expect('should be successful and return whole object with id', function(err, res, body) {
@@ -172,7 +172,7 @@ suite.discuss('When using Room API')
             options = {
               host: 'localhost',
               port: '8080',
-              path: '/patients/2012.9999',
+              path: '/rooms/63bffacbefb24c6bd59b3984',
               method: 'GET'
             };
 
