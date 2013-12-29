@@ -17,11 +17,12 @@ var args = process.argv.splice(2),
     rest = require('./rest.js'),
     sockets = require('./sockets.js'),
     mongoose = require('mongoose'),
-  	db = mongoose.createConnection('localhost', 'test', 27018);	
+  	db = mongoose.createConnection(args[1] || 'mongodb://localhost:27018/test');	
 
 //CONFIGURATION
 //plugins
-//app.use(express.bodyParser());
+app.use(express.json());
+app.use(express.urlencoded());
 //app.use(express.methodOverride());
 //app.use(express.responseTime());
 //app.use(express.query());

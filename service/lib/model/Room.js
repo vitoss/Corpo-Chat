@@ -1,7 +1,12 @@
 var mongoose = require('mongoose'),
     _ = require('underscore'),
     roomTokenizer = function(room) {
-      return room.name.split(' ');
+      var tokens = [];
+      
+      tokens = tokens.concat(room.name.split(' '));
+      tokens.push(room.name);
+
+      return tokens;
     };
 
 exports.init = function(db) {

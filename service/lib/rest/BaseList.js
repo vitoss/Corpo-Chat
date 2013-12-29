@@ -79,10 +79,8 @@ exports.del = function(req, res, Entity, discriminator, entityName) {
     });
 };
 
-exports.add = function(req, res, Entity, entityName) {
-    var entityData, newEntity;
-
-    entityData = req.body;
+exports.add = function(req, res, Entity, entityName, entityData) {
+    var newEntity;
 
     newEntity = new Entity(entityData);
     newEntity.save(function(err) {
@@ -94,4 +92,41 @@ exports.add = function(req, res, Entity, entityName) {
 
         res.send(201, JSON.stringify(newEntity));
     });
+};
+
+exports.addOrUpdate = function(req, res, Entity, entityName, entityData) {
+    
+    Entity.find({_id : entityData._id}, function(err, entities) {
+        if(err) {
+            res.send(500, 'Error while deleting ' + entityName + '. ' + entityName + ' not found. Details: ' + err);
+            return;
+        }
+
+        if(entities.length === 0) {
+            exports.add(req, res, Entity, entityName, entityData);
+
+            return;
+        }
+
+        if(entities.length > 1) {
+            res.send(409, 'More than one ' + entityName + ' found. Aborting removal.');
+            return;
+        }
+
+        //update
+        var entity = entities[0];
+
+        delete entityData._id;
+
+        entity.update(entityData, function(err, entities) {
+            if(err) {
+                res.send(500, 'Error while updating ' + entityName + '. ' + entityName + ' not found. Details: ' + err);
+                return;
+            }
+
+            res.send(200, JSON.stringify(entity));
+            return;
+        })
+    });
+    
 };
