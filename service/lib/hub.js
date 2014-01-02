@@ -47,7 +47,7 @@ db.once('open', function() {
 });
 
 rest.bootstrap(app, db);
-sockets.bootstrap(io);
+sockets.bootstrap(io, db);
 
 exports.listen = function(port) { return server.listen(port); };
 

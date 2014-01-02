@@ -21,7 +21,8 @@
     "socket.io": "latest",
     "express": "3.x",
     "mongoose": "latest",
-    "underscore": "latest"
+    "underscore": "latest",
+    "q": "~0.9.7"
   },
   "devDependencies": {
     "grunt": "latest",

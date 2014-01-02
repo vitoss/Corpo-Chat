@@ -1,6 +1,4 @@
-function addUser(user) {
-  db.users.insert(user);
-}
+load('./config.js');
 
 function addRoom(room) {
     room.created_at = new Date();
@@ -12,8 +10,7 @@ function setKeywords(room) {
 	room.keywords.push(room.name);
 }
 
-var userID = '52bffacbefb24c6bd59b3983';
-addUser({"_id": userID, "email": "admin@goo.com"});
+var userID = config.userId;
 
 for(var i=0,l=200; i<l; i++) {
     var room = {"_id": ObjectId(), "name": "Room " + i, "status": 1, "owner": userID};
@@ -23,6 +20,6 @@ for(var i=0,l=200; i<l; i++) {
 }
 
 //some predefined room
-var specialRoom = {"_id": ObjectId('63bffacbefb24c6bd59b3983'), "name": "Special Room", "status": 1, "owner": userID};
+var specialRoom = {"_id": ObjectId(config.roomId), "name": "Special Room", "status": 1, "owner": userID};
 setKeywords(specialRoom);
 addRoom(specialRoom);
