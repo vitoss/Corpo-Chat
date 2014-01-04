@@ -1,0 +1,81 @@
+<html>
+<head></head>
+<body>
+
+<fieldset>
+    <legend>Connect to chat room</legend>
+    <label for="address">Service address</label>
+    <input type="text" id="address" name="address" value="http://localhost:8080"/> 
+    <label for="room">Room name</label> <select type="text" name="room" id="room"></select>
+    <button id="connect">Connect</button>
+</fieldset>
+<fieldset>
+    <legend>Chat box (messages)</legend>
+    <textarea id="messages" rows="20" cols="50"></textarea>
+</fieldset>
+
+<fieldset>
+    <legend>Send message</legend>
+    <input type="text" id="msg" name="msg" />
+    <button id="send">Send</button>
+</fieldset>
+
+<script src="jquery.min.js"></script>
+<script src="http://localhost:8080/socket.io/socket.io.js"></script>
+<script>
+(function() {
+    var socket,
+        messagesBox = $('textarea#messages'),
+        addressBox = $('input#address'),
+        roomBox = $('select#room'),
+        messageBox = $('input#msg'),
+        addMessage = function(msg) {
+            messagesBox.append(msg);
+        },
+        connect = function() {
+            socket = io.connect(addressBox.val());
+            socket.on('connect', function() {
+                socket.emit('subscribe', {room:roomBox.val()});
+            });
+            socket.on('greetings', function (data) {
+                socket.emit('history', {room:roomBox.val()});
+            });
+
+            socket.on('history', function(data) {
+                var msgs = data.messages;
+
+                for(var i=0, l=msgs.length; i<l; i++) {
+                    addMessage(msgs[i].date + ': ' + msgs[i].content + '\n');
+                }
+
+                socket.emit('msg', {room:roomBox.val(), content: 'Hello all!'});
+            });
+
+            socket.on('msg', function(data) {
+                addMessage(data.date + ':' + data.content + '\n');
+            });
+        },
+        send = function() {
+            var msg = messageBox.val();
+            if(socket && msg && msg.length > 0) {
+                socket.emit('msg', {room: roomBox.val(), content: msg});
+            }
+        },
+        populateRoomList = function() {
+            $.get(addressBox.val()+'/rooms', function(data) {
+                var rooms = JSON.parse(data);
+                for(var i=0, l=rooms.length; i<l; i++) {
+                    roomBox.append('<option value="'+rooms[i]._id+'">'+rooms[i].name+'</option>');
+                }
+            });
+        };
+
+    $("button#connect").click(connect);
+    $("button#send").click(send);
+
+    populateRoomList();
+})();
+</script>
+
+</body>
+</html>

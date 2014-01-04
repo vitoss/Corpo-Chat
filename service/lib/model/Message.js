@@ -18,7 +18,8 @@ exports.init = function(db) {
     //create schema
     EntitySchemaDefinition = {
       content : { type: String, required: true },
-      owner: { type:  mongoose.Schema.ObjectId, required: true },
+      author: { type:  mongoose.Schema.ObjectId, required: true },
+      room: { type:  mongoose.Schema.ObjectId, required: true },
       status: { type: Number, required: true },
       date : { type: Date },
       keywords: [String]
