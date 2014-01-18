@@ -2,11 +2,58 @@
 {% block title %}Welcome to CorpoChat!{% endblock %}
 
 {% block content %}
-        <h2>Welcome to CorpoChat!</h2>
-	<p>Below you can find a list of currently existing rooms. Please join a poper one and enjoy!</p>
-	<ul id="rooms">
-	     {% for room in rooms %}
-	     <li>{{ room.name }}</li>
-	     {% endfor %}
-	</ul>
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>Welcome to Foundation</h1>
+    </div>
+  </div>   
+    
+  <div ng-app="corpoApp">
+    <div class="row large-12" ng-controller="RoomsCtrl">
+      <div class="row collapse">
+        <div class="small-10 columns">
+          <input type="text" class="large-10" placeholder="Search room" ng-model="searchPhrase" />
+        </div>
+        <div class="small-2 columns">
+              <a href="#" class="button postfix" ng-click="search()">Search</a>
+            </div>      
+      </div>
+      <h2 ng-bind="Content"></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <p>Below you can find a list of currently existing rooms. Please join a poper one and enjoy!</p>
+    <ul id="rooms">
+         {% for room in rooms %}
+         <li>{{ room.name }}</li>
+         {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
+
+
+{% block styles %}
+{% load staticfiles %}
+
+<link rel="stylesheet" href="{% static "components/Foundation/css/normalize.css" %}" />
+<link rel="stylesheet" href="{% static "components/Foundation/css/foundation.css" %}" />
+
+{% endblock %}
+
+{% block scripts %}
+{% load staticfiles %}
+
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+<script src="{% static "components/Foundation/js/foundation.min.js" %}"></script>
+
+<script src="{% static "scripts/app.js" %}"></script>
+<script src="{% static "scripts/controllers/rooms.js" %}"></script>
+
+<script>
+  $(document).foundation();
+</script>
+
 {% endblock %}
