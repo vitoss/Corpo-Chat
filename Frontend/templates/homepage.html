@@ -2,12 +2,13 @@
 {% block title %}Welcome to CorpoChat!{% endblock %}
 
 {% block content %}
+
   <div class="row">
     <div class="large-12 columns">
       <h1>Welcome to Foundation</h1>
     </div>
   </div>   
-    
+
   <div ng-app="corpoApp">
     <div class="row large-12" ng-controller="RoomsCtrl">
       <div class="row collapse">
@@ -19,17 +20,15 @@
             </div>      
       </div>
       <h2 ng-bind="Content"></h2>
+      <div class="row room-list">
+        <p>Below you can find a list of currently existing rooms. Please join a poper one and enjoy!</p>
+        <ul>
+            <li ng-repeat="room in rooms" ng-bind="room.name"></li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <div class="row">
-    <p>Below you can find a list of currently existing rooms. Please join a poper one and enjoy!</p>
-    <ul id="rooms">
-         {% for room in rooms %}
-         <li>{{ room.name }}</li>
-         {% endfor %}
-    </ul>
-  </div>
 {% endblock %}
 
 
