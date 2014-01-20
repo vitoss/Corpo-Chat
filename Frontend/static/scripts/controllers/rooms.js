@@ -1,21 +1,23 @@
 
 angular.module('corpoApp')
-.controller('RoomsCtrl', ['$scope', '$http', 'serviceUrl',
- function($scope, $http, serviceUrl) {
-  $scope.Content = "Test content from AngularJS!";
+.controller('RoomsCtrl', ['$scope', '$http', 'Restangular',
+ function($scope, $http, Restangular) {
+  var rooms = Restangular.all('rooms');
 
-  $scope.rooms = [];
+  $scope.workInProgress = true;
+
+  $scope.rooms = rooms.getList().then(function(rooms) {
+    $scope.rooms = rooms;
+    $scope.workInProgress = false;
+  });
 
   $scope.searchPhrase = '';
-
+  
   $scope.search = function() {
-  	$http({ method: 'GET', url: serviceUrl }).
-	  success(function(data, status, headers, config) {
-	    $scope.rooms = data;
-	  }).
-	  error(function(data, status, headers, config) {
-	    // called asynchronously if an error occurs
-	    // or server returns response with an error status.
-	  });
+    $scope.workInProgress = false;
+    rooms.getList({'q': $scope.searchPhrase}).then(function(rooms) {
+      $scope.rooms = rooms;
+      $scope.workInProgress = false;
+    });
   };
 }]);

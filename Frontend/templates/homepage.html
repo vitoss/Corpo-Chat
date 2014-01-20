@@ -19,12 +19,16 @@
               <a href="#" class="button postfix" ng-click="search()">Search</a>
             </div>      
       </div>
-      <h2 ng-bind="Content"></h2>
-      <div class="row room-list">
+
+      <div class="row room-list" ng-hide="workInProgress">
         <p>Below you can find a list of currently existing rooms. Please join a poper one and enjoy!</p>
         <ul>
             <li ng-repeat="room in rooms" ng-bind="room.name"></li>
         </ul>
+      </div>
+
+      <div class="row progressBar" ng-show="workInProgress">
+        Loading rooms...
       </div>
     </div>
   </div>
@@ -46,6 +50,8 @@
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/restangular/latest/restangular.min.js"></script>
 <script src="{% static "components/Foundation/js/foundation.min.js" %}"></script>
 
 <script src="{% static "scripts/app.js" %}"></script>
