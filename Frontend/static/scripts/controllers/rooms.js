@@ -1,7 +1,7 @@
 
 angular.module('corpoApp')
-.controller('RoomsCtrl', ['$scope', '$http', 'Restangular',
- function($scope, $http, Restangular) {
+.controller('RoomsCtrl', ['$scope', 'Restangular',
+ function($scope, Restangular) {
   var rooms = Restangular.all('rooms');
 
   $scope.workInProgress = true;
