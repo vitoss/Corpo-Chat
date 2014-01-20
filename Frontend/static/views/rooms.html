@@ -1,17 +1,29 @@
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Welcome to Corpo Chat</h1>
+  </div>
+</div>   
+
 <div class="row large-12">
   <div class="row collapse">
     <div class="small-10 columns">
-      <input type="text" class="large-10" placeholder="Search room" ng-model="searchPhrase" />
+      <input type="text" class="large-10" placeholder="Search room" ng-model="searchPhrase" ng-enter="search()" />
     </div>
     <div class="small-2 columns">
-          <a href="#" class="button postfix" ng-click="search()">Search</a>
-        </div>      
+      <a href="#" class="button postfix" ng-click="search()">Search</a>
+    </div>
   </div>
 
-  <div class="row room-list" ng-hide="workInProgress">
+  <div class="row large-12 room-list" ng-hide="workInProgress">
     <p>Below you can find a list of currently existing rooms. Please join a poper one and enjoy!</p>
-    <ul>
-        <li ng-repeat="room in rooms" ng-bind="room.name"></li>
+
+    <ul class="small-block-grid-5">
+      <li class="room" ng-repeat="room in rooms">
+        <a class="button" title="Room description" href="/{{room._id}}">
+          <span ng-bind="room.name"></span> <br/>
+          <span class="label secondary radius">12</span>
+        </a>
+      </li>
     </ul>
   </div>
 

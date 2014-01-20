@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% block title %}Welcome to CorpoChat!{% endblock %}
+
+{% block title %}Corpo Chat{% endblock %}
 
 {% block content %}
 <div ng-app="corpoApp">
@@ -28,12 +29,6 @@
     </nav>
   </div>
 
-  <div class="row">
-    <div class="large-12 columns">
-      <h1>Welcome to Corpo Chat</h1>
-    </div>
-  </div>   
-
   <div ng-view></div>
 </div>
 {% endblock %}
@@ -45,6 +40,7 @@
 <link rel="stylesheet" href="{% static "components/Foundation/css/normalize.css" %}" />
 <link rel="stylesheet" href="{% static "components/Foundation/css/foundation.css" %}" />
 <link rel="stylesheet" href="{% static "components/foundation-icons/foundation-icons.css" %}" />
+<link rel="stylesheet" href="{% static "styles/app.css" %}" />
 
 {% endblock %}
 
@@ -60,6 +56,7 @@
 <script src="{% static "components/Foundation/js/foundation.min.js" %}"></script>
 
 <script src="{% static "scripts/app.js" %}"></script>
+<script src="{% static "scripts/directives/misc.js" %}"></script>
 <script src="{% static "scripts/controllers/rooms.js" %}"></script>
 <script src="{% static "scripts/controllers/room.js" %}"></script>
 

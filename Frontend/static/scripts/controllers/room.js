@@ -1,7 +1,9 @@
 
 angular.module('corpoApp')
-.controller('RoomCtrl', ['$scope', '$routeParams',
-  function($scope, $routeParams) {
-    $scope.room = $routeParams.roomName;
+.controller('RoomCtrl', ['$scope', '$routeParams', 'Restangular',
+  function($scope, $routeParams, Restangular) {
+    var roomId = $routeParams.roomId;
+
+    $scope.room = Restangular.one('rooms', roomId).get().$object;
   }
 ]);

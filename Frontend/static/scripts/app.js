@@ -13,7 +13,7 @@ app.config(['$routeProvider', '$locationProvider', 'RestangularProvider', 'servi
       templateUrl: 'static/views/rooms.html',
       controller: 'RoomsCtrl'
     })
-    .when('/:roomName', {
+    .when('/:roomId', {
       templateUrl: 'static/views/room.html',
       controller: 'RoomCtrl'
     });
