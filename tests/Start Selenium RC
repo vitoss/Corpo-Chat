@@ -1,1 +1,3 @@
-  Description, installation and the use Selenium RC.
+  Selenium RC (Remote Control) is  a portable software testing framework, which allows to write automated test for a web
+  application in a programming language so as Java, Python, Ruby, Perl, .NET and PHP. Unlike ordinary Selenium IDE, which
+  enabled to carry the test, out only on the Firefox web browser, in Selenium RC is possible to choose diffrent web browsers.
