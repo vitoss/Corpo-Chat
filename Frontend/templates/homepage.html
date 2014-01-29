@@ -3,29 +3,10 @@
 {% block title %}Corpo Chat{% endblock %}
 
 {% block content %}
-<div ng-app="corpoApp">
+<div ng-app="corpoApp" ng-controller="SessionCtrl">
   <div class="fixed">
     <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/">CorpoChat</a></h1>
-        </li>
-      </ul>
-
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <li><a href="#">About</a></li>
-        </ul>
-
-        <!-- Left Nav Section -->
-        <ul class="left">
-          <li><a href="/"><i class="fi-plus"></i> Join existing room</a></li>
-          <li class="divider"></li>
-          <li><a href="/Room1">Room 1</a></li>
-          <li><a href="/Room2"><i class="fi-lightbulb"></i> Room 2</a></li>
-        </ul>
-      </section>
+      <topbar></topbar>
     </nav>
   </div>
 
@@ -47,8 +28,8 @@
 {% block scripts %}
 {% load staticfiles %}
 
-<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+<script src="{% static "components/jquery/jquery.min.js" %}"></script>
+<script src="{% static "components/angularjs/angular.min.js" %}"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
@@ -57,8 +38,11 @@
 
 <script src="{% static "scripts/app.js" %}"></script>
 <script src="{% static "scripts/directives/misc.js" %}"></script>
+<script src="{% static "scripts/directives/topbar.js" %}"></script>
 <script src="{% static "scripts/controllers/rooms.js" %}"></script>
 <script src="{% static "scripts/controllers/room.js" %}"></script>
+<script src="{% static "scripts/controllers/session.js" %}"></script>
+
 
 <script>
   $(document).foundation();
