@@ -30,14 +30,18 @@
 
 <script src="{% static "components/jquery/jquery.min.js" %}"></script>
 <script src="{% static "components/angularjs/angular.min.js" %}"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-<script type="text/javascript" src="http://cdn.jsdelivr.net/restangular/latest/restangular.min.js"></script>
+<script src="{% static "components/angularjs/angular-route.js" %}"></script>
+<script src="{% static "components/modernizr/modernizr.min.js" %}"></script>
+<script src="{% static "components/underscorejs/underscore-min.js" %}"></script>
+<script src="{% static "components/restangular/restangular.min.js" %}"></script>
 <script src="{% static "components/Foundation/js/foundation.min.js" %}"></script>
+<script src="{% static "components/socket.io/socket.io.js" %}"></script>
+<script src="{% static "components/angular-socket-io-master/socket.js" %}"></script>
+
 
 <script src="{% static "scripts/app.js" %}"></script>
 <script src="{% static "scripts/services/session.js" %}"></script>
+<script src="{% static "scripts/services/broker.js" %}"></script>
 <script src="{% static "scripts/directives/misc.js" %}"></script>
 <script src="{% static "scripts/directives/topbar.js" %}"></script>
 <script src="{% static "scripts/controllers/rooms.js" %}"></script>
