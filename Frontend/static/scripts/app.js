@@ -20,3 +20,8 @@ app.config(['$routeProvider', '$locationProvider', 'RestangularProvider', 'servi
 
   $locationProvider.html5Mode(true);
 }]);
+
+//misc
+app.factory('_', function() {
+  return window._; // assumes underscore has already been loaded on the page
+});

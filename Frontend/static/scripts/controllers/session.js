@@ -1,4 +1,4 @@
 angular.module('corpoApp')
-  .controller('SessionCtrl', ['$scope', function($scope) {
-    $scope.activeRooms = [{'_id': 'adsf', 'name': 'RoomA', 'indicator': false}, {'_id': 'adsf', 'name': 'RoomB', 'indicator': true}];
+  .controller('SessionCtrl', ['$scope', 'session', function($scope, session) {
+    $scope.activeRooms = session.list();
   }]);
