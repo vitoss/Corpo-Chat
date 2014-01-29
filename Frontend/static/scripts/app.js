@@ -1,5 +1,5 @@
 // declare a module
-var app = angular.module('corpoApp', ['ngRoute', 'restangular']);
+var app = angular.module('corpoApp', ['ngRoute', 'restangular', 'btford.socket-io']);
 
 app.constant('serviceUrl', 'http://localhost:8080/');
 
@@ -24,4 +24,8 @@ app.config(['$routeProvider', '$locationProvider', 'RestangularProvider', 'servi
 //misc
 app.factory('_', function() {
   return window._; // assumes underscore has already been loaded on the page
+});
+
+app.factory('io', function() {
+  return window.io; // assumes underscore has already been loaded on the page
 });

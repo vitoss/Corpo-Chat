@@ -22,7 +22,7 @@ exports.bootstrap = function(io, db) {
         socket.on('subscribe', function (data, callback) {
         	Rooms.findOne(data.room).then(function() {
 	        	socket.join(data.room);
-	            socket.emit('greetings', 'Welcome in room ' + data.room);
+	            socket.emit('greetings', {room: data.room, status:0, msg: 'Welcome in room ' + data.room});
             }, function(reason) {
             	socket.emit('error', reason);
             });
