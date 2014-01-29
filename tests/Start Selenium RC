@@ -1,0 +1,39 @@
+Description:
+
+  Selenium RC (Remote Control) is  a portable software testing framework, which allows to write automated test for
+  a web application, in a programming language so as Java, Python, Ruby, Perl, .NET and PHP. Unlike ordinary Selenium IDE,
+  which enabled to carry the test out, only on the Firefox web browser, in Selenium RC is possible to choose diffrent web 
+  browsers.
+  
+  Selenium RC include two componemts:
+  - the Selenium Server which automatically launches and kills browsers, and acts as a HTTP proxy for web requests 
+    from them.
+  - Client libraries which provide the interface beetwen each programming language and the Selenium RC Server.
+  
+Installation:
+  The Selenium RC server is simply a Java jar file (selenium-server-standalone-<version-number>.jar), which doesn’t 
+  require any special installation. It will be sufficient to take the file down from the site Selenium: 
+    http://docs.seleniumhq.org/download/ 
+  and to save him in the specific directory.
+  
+Use:
+  Before starting any tests, at first we must start the server. For that purpose earlier he must be installed the latest
+  Java JRE on the system. Next open up a command prompt and go to the directory where file Selenium RC server is located.
+  Write the following from a command-line console:
+    java -jar selenium-server-standalone-<version-number>.jar
+  Now when Selenium Server is acting, open the program in which you will be writing tests. For example an exerciser
+  in Java, must start from the following line of the code:
+    selenium = new DefaultSelenium(serverHost, serverPort, strBrowser, strURL);
+  which will enable the follow-up work.
+  
+  serverHost - it is charakter string which are describing on which host in our computer Selenium RC will be acting,
+               it is usually host string as "localhost".
+  serverPort - it is the number port on computer on which Selenium Server runs, it is usually port number as 4444.
+  strBrowser - it is charakter string which are describing on what web browser there will be starter tests. We can choose:
+    "*firefox"
+    "*iexplore"
+    "*googlechrome"
+    "*safari"
+    and other.
+  strURL - it is charakter string which are describing the starting page from which tests will begin,
+           for example "http://www.google.pl"
