@@ -38,7 +38,8 @@ module.exports = function(grunt, undefined) {
         grunt.log.writeln('Mongo daemon on ' + address + ':' + port + ' with dbpath: ' + dbpath + ' started.');
       } else if(command === 'stop') {
         //kiling
-        var res = execSync('kill -9 `ps -A | grep mongo | grep '+port+' | grep '+dbpath+' | awk \'{print $1}\'`');
+        //var res = execSync('kill -9 `ps -A | grep mongo | grep '+port+' | grep '+dbpath+' | awk \'{print $1}\'`');
+        var res = execSync('kill -9 `ps -A | grep mongo | awk \'{print $1}\'`');
         grunt.log.writeln('Mongodb daemon residing on ' + address + ':' + port  + ' stopped.');
       }
     });

@@ -119,6 +119,27 @@ vows.describe('Messages API')
             assert.isNotNull(data);
         }
     },
+    'after sending message one should get confirmation in return': {
+        topic: function() {
+            var promise = new(events.EventEmitter),
+                socket = getSocket();
 
+            //confirmation
+            socket.on('msg', function(data) { promise.emit('success', data); });
+            
+            socket.on('greetings', function(data) { 
+                console.log('Socket greets'); 
+                socket.emit('msg', {room: dataConfig.roomId, content: 'simple message'}); 
+            });
+
+            socket.emit('subscribe', {room: dataConfig.roomId});
+            
+            return promise;
+        },
+
+        'we should get that message': function(err, data) {
+            assert.isNotNull(data);
+        }
+    }
 })
 .exportTo(module);

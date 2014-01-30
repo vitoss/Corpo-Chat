@@ -10,7 +10,7 @@
 
   <fieldset>
     <legend>Send message</legend>
-    <input type="text" id="msg" name="msg" />
-    <button id="send">Send</button>
+    <input type="text" class="msg" name="msg" ng-model="draft" />
+    <button id="send" ng-click="send()">Send</button>
   </fieldset>
 </div>

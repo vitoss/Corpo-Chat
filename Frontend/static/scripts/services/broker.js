@@ -27,7 +27,8 @@ angular.module('corpoApp')
     });
 
     socket.on('msg', function interpretMessage(data) {
-        console.log(data.date + ':' + data.content + '\n');
+        console.log(data);
+        handlers[data.room].message(data);
     });
 
     return {
@@ -40,8 +41,8 @@ angular.module('corpoApp')
           history: function() {
             socket.emit('history', {room: roomId});
           },
-          send: function() {
-            socket.emit('msg', {room:'52dab9fe94e62174cb5e9164', content: 'Hello all!'});
+          send: function(msg) {
+            socket.emit('msg', {room:roomId, content: msg});
           }
         };
       },

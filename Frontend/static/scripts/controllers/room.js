@@ -28,5 +28,11 @@ angular.module('corpoApp')
     subscription = broker.subscribe(roomId, brokerDelegate);
 
     $scope.messages = messages;
+
+    $scope.draft = '';
+    $scope.send = function sendMessage() {
+      subscription.send($scope.draft);
+      $scope.draft = '';
+    };
   }
 ]);
