@@ -11,6 +11,8 @@
   <fieldset>
     <legend>Send message</legend>
     <input type="text" class="msg" name="msg" ng-model="draft" />
-    <button id="send" ng-click="send()">Send</button>
+    <button class="send" ng-click="send()">Send</button>
   </fieldset>
+
+  <button class="leave secondary right" ng-click="leave()">Leave room</button>
 </div>

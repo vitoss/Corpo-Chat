@@ -1,7 +1,7 @@
 
 angular.module('corpoApp')
-.controller('RoomCtrl', ['$scope', '$routeParams', 'Restangular', 'session', 'broker',
-  function($scope, $routeParams, Restangular, session, broker) {
+.controller('RoomCtrl', ['$scope', '$routeParams', 'Restangular', 'session', 'broker', '$location',
+  function($scope, $routeParams, Restangular, session, broker, $location) {
     var roomId = $routeParams.roomId,
       subscription,
       brokerDelegate,
@@ -30,9 +30,16 @@ angular.module('corpoApp')
     $scope.messages = messages;
 
     $scope.draft = '';
+
     $scope.send = function sendMessage() {
       subscription.send($scope.draft);
       $scope.draft = '';
+    };
+
+    $scope.leave = function leaveRoom() {
+      session.remove($scope.room);
+
+      $location.path('/')
     };
   }
 ]);
