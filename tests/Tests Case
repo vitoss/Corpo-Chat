@@ -2,91 +2,144 @@ IT1
 As a User I would like to log in to the application using Google Account
 
   TC001_A
- Step_id         Action                                               Results
-   1         Run aplication.                                    Attempt to open a login window.
-   2         The verification or login window were opened.      Login window wasn't opened.
-   3         Writing information about the mistake.             Showing this information.
+ Step_id         Action                                                  Results
+   1         Run aplication.                                       Attempt to open a login window.
+   2         The verification whether login window were opened.    Login window wasn't opened.
+   3         Writing information about the mistake.                Showing this information.
 		
   TC001_B
- Step_id         Action                                               Results
-   1        Run aplication.                                   Attempt to open a login window.
-   2        The verification or login window were opened.     Login window is open and receive massage that is currently busy.
-   3        Writing information about the mistake.            Showing this information.
+ Step_id         Action                                                  Results
+   1        Run aplication.                                      Attempt to open a login window.
+   2        The verification whether login window were opened.   Login window is open and receive massage that is currently busy.
+   3        Writing information about the mistake.               Showing this information.
 		
   TC001_C
  Step_id             Action                                              Results
     1       Run aplication.                                       Attempt to open a login window.
-    2       The verification or login window were opened.         Login window is open.
+    2       The verification whether login window were opened.    Login window is open.
     3       Run aplication second time.                           Attempt to open a login window second time.
     4       Writing massage that aplication is already in use.    Showing this information.
 		
   TC001_D
- Step_id             Action                                                  Results
-    1       Run aplication.                                           Attempt to open a login window.
-    2       The verification or login window were opened.             Login window is open.
-    3       Enter incorrect login and password.                       Show text in special field.
-    4       Click the buttont to log in.                              Attempt to log in.
-    5       The verification or homepage aplication were opened.      Homepage wasn't opened.
-    6       Writing massage that login is incorrect.                  Showing this information.
+ Step_id             Action                                                    Results
+    1       Run aplication.                                              Attempt to open a login window.
+    2       The verification whether login window were opened.           Login window is open.
+    3       Enter incorrect login and password.                          Show text in special field.
+    4       Click the buttont to log in.                                 Attempt to log in.
+    5       The verification whether homepage aplication were opened.    Homepage wasn't opened.
+    6       Writing massage that login is incorrect.                     Showing this information.
 		
   TC001_E
- Step_id             Action                                                  Results
-    1       Run aplication.                                           Attempt to open a login window.
-    2       The verification or login window were opened.             Login window is open.
-    3       Enter incorrect login and password.                       Show text in special field.
-    4       Click the buttont to log in.                              Attempt to log in.
-    5       The verification or homepage aplication were opened.      Homepage wasn't opened.
-    6       Writing massage that password is incorrect.               Showing this information.
+ Step_id             Action                                                     Results
+    1       Run aplication.                                               Attempt to open a login window.
+    2       The verification whether login window were opened.            Login window is open.
+    3       Enter incorrect login and password.                           Show text in special field.
+    4       Click the buttont to log in.                                  Attempt to log in.
+    5       The verification whether homepage aplication were opened.     Homepage wasn't opened.
+    6       Writing massage that password is incorrect.                   Showing this information.
 		
   TC001_F
- Step_id              Action                                                  Results
-    1       Run aplication.                                           Attempt to open a login window.
-    2       The verification or login window were opened.             Login window is open.
-    3       Enter login with special Signs.                           Show text in special field.
-    4       Click the buttont to log in.                              Attempt to log in.
-    5       The verification or main window aplication were opened.   Homepage wasn't opened.
-    6       Writing massage that login is incorrect.                  Showing this information.
+ Step_id              Action                                                       Results
+    1       Run aplication.                                                Attempt to open a login window.
+    2       The verification whether login window were opened.             Login window is open.
+    3       Enter login with special Signs.                                Show text in special field.
+    4       Click the buttont to log in.                                   Attempt to log in.
+    5       The verification whether main window aplication were opened.   Homepage wasn't opened.
+    6       Writing massage that login is incorrect.                       Showing this information.
 		
   TC001_G
- Step_id              Action                                                  Results
-    1       Run aplication.                                           Attempt to open a login window.
-    2       The verification or login window were opened.             Login window is open.
-    3       Enter correct login and password.                         Show text in special field.
-    4       Click the buttont to log in.                              Attempt to log in.
-    5       The verification or homepage aplication were opened.      Main window is opened.
+ Step_id              Action                                                      Results
+    1       Run aplication.                                               Attempt to open a login window.
+    2       The verification whether login window were opened.            Login window is open.
+    3       Enter correct login and password.                             Show text in special field.
+    4       Click the buttont to log in.                                  Attempt to log in.
+    5       The verification whether homepage aplication were opened.     Aplication homepage is opened.
 
 
 As a User I would like to automaticaly log in into app if I’m already authenticated.
 
   TC002_A
  Step_id            Action                                                    Results
-    1      Run aplication.                                            Attempt to open a login window.
-    2      The verification or login window were opened.              Login window is open.
-    3      Enter correct login and password.                          Show text in special field.
-    4      Click the buttont to log in.                               Attempt to log in.
-    5      The verification or homepage aplication were opened.       Application homepage is displayed.
-    6      Close aplication.                                          Attempt to close homepage.
-    7      The verification or homepage is closed.		      Homepage is closed.
-    7      Run application again.                                     Login screen is displayed.
+    1      TC001_G
+    2      Close aplication.                                          Attempt to close homepage.
+    3      The verification whether homepage is closed.		      Homepage isn't closed.
+    4      Writing massage that login is incorrect.                   Showing this information.
     
   TC002_B
  Step_id            Action                                                    Results
-    1      Run aplication.                                            Attempt to open a login window.
-    2      The verification or login window were opened.              Login window is open.
-    3      Enter correct login and password.                          Show text in special field.
-    4      Click the buttont to log in.                               Attempt to log in.
-    5      The verification or homepage aplication were opened.       Application homepage is displayed.
-    6      Close aplication.                                          Attempt to close homepage.
-    7      The verification or homepage is closed.		      Homepage isn't closed.
-    8      Writing massage that login is incorrect.                   Showing this information.
+    1      TC001_G
+    2      Close aplication.                                          Attempt to close homepage.
+    3      The verification whether homepage is closed.		      Homepage is closed.
+    4      Run application again.                                     Attempt to open a aplication homepage.
+    5      The verification whether homepage is open.                 Aplication homepage is displayed.
     
-  TC003_C
+  TC002_C
  Step_id            Action                                                    Results
-    1      Run aplication.                                            Attempt to open a login window.
-    2      The verification or login window were opened.              Login window is open.
-    3      Enter correct login and password.                          Show text in special field.
-    4      Click the buttont to log in.                               Attempt to log in.
-    5      The verification or homepage aplication were opened.       Application homepage is displayed.
-    6      Click logout button.           Login screen is displayed.
-    7      Close application.             Application is closed.
-    8      Run application again.        Login screen is displayed.
+    1      TC001_G
+    2      Close aplication.                                          Attempt to close homepage.
+    3      The verification whether homepage is closed.		      Homepage is closed.
+    4      Run application again.                                     Attempt to open a aplication homepage.
+    5      The verification whether homepage is open.                 Homepage wasn't opened.
+    6      Writing massage that homepage wasn'topened.                Showing this information.
+    
+  TC002_D
+ Step_id            Action                                                    Results
+    1      TC001_G
+    2      Click logout button.                                       Attempt to log out.
+    3      The verification whether login window appered.             Login window is displayed.(?)
+    4      Close application.                                         Attempt to close the aplication.
+    5      The verification whether aplication is closed.             Application is closed.(?)
+    6      Run application again.                                     Login screen is displayed.(?)
+    
+    
+As a User I would like to search through existing rooms.
+
+  TC003_A
+ Step_id            Action                                                    Results
+    1      TC001_G
+    2      Write correct title searching room.                        Show text in special textbox.
+    3      Click button to saerch.                                    Attempt searching for the room.
+    4      The verification whether any room was found.               Show the list rooms.
+    
+  TC003_B
+ Step_id            Action                                                    Results
+    1      TC001_G
+    2      Write incorrect title searching room.                      Show text in special textbox.
+    3      Click button to saerch.                                    Attempt searching for the room.
+    4      The verification whether any room was found.               No rooms were found.
+    5      Writing information about the mistake.                     Showing this information.
+    
+    
+As a User I would like to join existing room.
+
+  TC004_A
+ Step_id            Action                                                    Results
+    1      TC001_G
+    2      Click search for 'Room 1'.                        Attempt searching for the 'Room 1'.
+    3      Checking whether found 'Room 1'                   Room1 is found on list.
+    4      Click Join button.                                Attempt open this room.
+    5      The verification whether room was opened.         Room is opened.
+    
+  TC004_B
+ Step_id            Action                                                    Results
+    1      TC001_G
+    2      Click search for 'Room 1'.                        Attempt searching for the 'Room 1'.
+    3      Checking whether found 'Room 1'                   Room1 is not found on list.
+    4      Writing information about the mistake.            Showing this information.
+    
+  TC004_C
+ Step_id            Action                                                    Results
+    1      TC001_G
+    2      Click search for 'Room 1'.                        Attempt searching for the 'Room 1'.
+    3      Checking whether found 'Room 1'                   Room1 is found on list.
+    4      Click Join button.                                Attempt open this room.
+    5      The verification whether room was opened.         Room wasn't opened.
+    6      Writing information about the mistake.            Showing this information.
+    
+  TC004_D
+ Step_id            Action                                                    Results
+    1      TC001_G
+    2      Click search for 'Room 1'.                        Attempt searching for the 'Room 1'.
+    3      Checking whether found 'Room 1'                   Room1 is found on list.
+    4      Click Join button twice fast.                     Attempt open this room.
+    5      The verification whether room was opened.         Room is opened only once.
