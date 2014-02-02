@@ -236,9 +236,25 @@ As a User I leave room.
 As a User I would like to see who send other messages. Especially see their avarat and login name.
 
   TC007_A
- Step_id
+ Step_id                 Action                                                Results
     1    TC004_A
-    2    Click the message.    Open window with login name.
+    2    The verification whether any message is on chat board.        On chat board are massages.
+    3    Click the message.                                            Attempt to open window with login name.
+    4    The verification whether window with login name is open.      Window with login name is open.
+    
+  TC007_B
+ Step_id                 Action                                                Results
+    1    TC004_A
+    2    The verification whether any message is on chat board.        On chat board aren't no massages.
+    3    Writing information about the mistake.                        Showing this information.
+    
+  TC007_C
+ Step_id                 Action                                                Results
+    1    TC004_A
+    2    The verification whether any message is on chat board.        On chat board are massages.
+    3    Click the message.                                            Attempt to open window with login name.
+    4    The verification whether window with login name is open.      Window with login name isn't open.
+    5    Writing information about the mistake.                        Showing this information.
     
     
 As a User I would like to create new room.
@@ -260,22 +276,22 @@ As a Room Owner I would like to close room.
 
   TC009_A
  Step_id            Action                                           Results
-    1      TC001_A
-    2      Click the button building new room.                     Attempt creating new room.
+    1      TC004_A
+    2      Click the button closing room.                          Attempt closing room.
     3      The verification whether owner are closing the room.    The owner is closing the room.
     4      The verification whether room was close.                Room is close.
     
   TC009_B
  Step_id            Action                                           Results
-    1      TC001_A
-    2      Click the button building new room.                     Attempt creating new room.
+    1      TC004_A
+    2      Click the button closing room.                          Attempt closing room.
     3      The verification whether owner are closing the room.    Not an owner is closing the room.
     4      Writing information about the mistake.                  Showing this information.
     
   TC009_C
  Step_id            Action                                           Results
-    1      TC001_A
-    2      Click the button building new room.                     Attempt creating new room.
+    1      TC004_A
+    2      Click the button closing room.                          Attempt closing room.
     3      The verification whether owner are closing the room.    The owner is closing the room.
     4      The verification whether room was close.                Room isn't close.
     5      Writing information about the mistake.                  Showing this information.
