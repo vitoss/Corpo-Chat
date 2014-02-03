@@ -41,5 +41,17 @@ angular.module('corpoApp')
 
       $location.path('/')
     };
+
+    $scope.close = function closeRoom() {
+      session.remove($scope.room);
+
+      $scope.room.status = 2;
+
+      $scope.room.customPUT($scope.room, roomId).then(function putWasSuccessful() {
+        $location.path('/');
+      }, function errorDuringPut() {
+        $location.path('/');
+      });
+    };
   }
 ]);

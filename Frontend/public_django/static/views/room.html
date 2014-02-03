@@ -1,6 +1,6 @@
 <div class="row large-12">
 	<h1 ng-bind="room.name"></h1>
-
+  <div data-alert class="alert-box warning" ng-show="room.status == 2">Room is closed. Only history may be viewed.</div>
   <fieldset>
     <legend>Chat box (messages)</legend>
     <ul>
@@ -10,9 +10,10 @@
 
   <fieldset>
     <legend>Send message</legend>
-    <input type="text" class="msg" name="msg" ng-model="draft" />
-    <button class="send" ng-click="send()">Send</button>
+    <input type="text" class="msg" name="msg" ng-model="draft" ng-disabled="room.status == 2" />
+    <button class="send left" ng-click="send()" ng-disabled="room.status == 2">Send</button>
   </fieldset>
 
-  <button class="leave secondary right" ng-click="leave()">Leave room</button>
+  <button class="leave secondary left" ng-click="leave()">Leave room</button>
+  <button class="leave alert right" ng-click="close()" ng-disabled="room.status == 2">Close room</button>
 </div>

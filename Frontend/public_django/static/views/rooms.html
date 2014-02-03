@@ -19,7 +19,7 @@
 
     <ul class="small-block-grid-5">
       <li class="room" ng-repeat="room in rooms">
-        <a class="button" title="Room description" href="/{{room._id}}">
+        <a class="button" ng-class="{'secondary': room.status == 2}" title="Room description" href="/{{room._id}}">
           <span ng-bind="room.name"></span> <br/>
           <span class="label secondary radius">12</span>
         </a>
