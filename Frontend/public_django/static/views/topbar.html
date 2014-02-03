@@ -14,9 +14,11 @@
 
     <!-- Left Nav Section -->
     <ul class="left">
-
       <li></li>
       <li><a href="/"><i class="fi-plus"></i> Join existing room</a></li>
+      <li>
+        <a href="/new"><i class="fi-page-add"></i> Create room</a>
+      </li>
       <li class="divider"></li>
       <li ng-repeat="room in activeRooms"><a ng-attr-href="/{{room._id}}" ng-bind="room.name">
         <i class="fi-lightbulb" ng-show="room.indicator"></i></a>

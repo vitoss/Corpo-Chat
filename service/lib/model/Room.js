@@ -3,8 +3,8 @@ var mongoose = require('mongoose'),
     roomTokenizer = function(room) {
       var tokens = [];
       
-      tokens = tokens.concat(room.name.split(' '));
-      tokens.push(room.name);
+      tokens = tokens.concat(room.name.toLowerCase().split(' '));
+      tokens.push(room.name.toLowerCase());
 
       return tokens;
     },

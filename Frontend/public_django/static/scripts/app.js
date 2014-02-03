@@ -13,6 +13,10 @@ app.config(['$routeProvider', '$locationProvider', 'RestangularProvider', 'servi
       templateUrl: 'static/views/rooms.html',
       controller: 'RoomsCtrl'
     })
+    .when('/new', {
+      templateUrl: 'static/views/new.html',
+      controller: 'NewCtrl'
+    })
     .when('/:roomId', {
       templateUrl: 'static/views/room.html',
       controller: 'RoomCtrl'
