@@ -1,0 +1,36 @@
+<div class="row large-4">
+  <h2>Create new room</h2>
+  
+  <form data-abide class="new-room-form">
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Room name <small>required</small></label>
+        <input type="text" placeholder="Name" ng-model="name" required />
+        <small class="error">Name is required and must be a string.</small>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <label>Options</label>
+        <input id="checkbox1" type="checkbox" disabled="disabled"><label for="checkbox1">Private</label>
+        <input id="checkbox2" type="checkbox" disabled="disabled"><label for="checkbox2">Hidden</label>
+      </div>
+
+      <div class="large-6 columns">
+        <label>Room password</label>
+        <input type="text" placeholder="Password" disabled="disabled"/>
+      </div>
+    </div>
+
+    <div class="row right">
+      <a href="/" class="button secondary">Cancel</a>
+      <a class="button" ng-click="create()">Create</a>
+    </div>
+    
+    <div class="server-error" ng-show="error">Room name has been already taken.</div>
+
+  </form>
+
+  <script>$('.new-room-form').foundation();</script>
+</div>

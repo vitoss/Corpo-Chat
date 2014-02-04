@@ -5,7 +5,7 @@ exports.getList = function(req, res, model) {
                 offset = req.query.offset || 0,
                 sort = {}, sortQuery = req.query.sort,
                 searchWord = req.query.q, 
-                query = searchWord ? { keywords : searchWord } : {};
+                query = searchWord ? { keywords : searchWord.toLowerCase() } : {};
 
     //parsing sort
     if(sortQuery) {

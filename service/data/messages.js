@@ -6,8 +6,8 @@ function addMessage(msg) {
 }
 
 function setKeywords(msg) {
-	msg.keywords = msg.content.split(' ');
-	msg.keywords.push(msg.author);
+	msg.keywords = msg.content.toLowerCase().split(' ');
+	msg.keywords.push(msg.author.toLowerCase());
 }
 
 var userID = config.userId;

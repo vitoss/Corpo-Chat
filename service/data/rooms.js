@@ -6,8 +6,8 @@ function addRoom(room) {
 }
 
 function setKeywords(room) {
-	room.keywords = room.name.split(' ');
-	room.keywords.push(room.name);
+	room.keywords = room.name.toLowerCase().split(' ');
+	room.keywords.push(room.name.toLowerCase());
 }
 
 var userID = config.userId;
