@@ -21,8 +21,8 @@ Use:
   Java JRE on the system. Next open up a command prompt and go to the directory where file Selenium RC server is located.
   Write the following from a command-line console:
     java -jar selenium-server-standalone-<version-number>.jar
-  Now when Selenium Server is acting, open the program in which you will be writing tests. For example an exerciser
-  in Java, must start from the following line of the code:
+  Now when Selenium Server is acting, open the program in which you will be writing tests. Add Selenium server jar file
+  as one of your libraries. For example an exerciser in Java, must start from the following line of the code:
     selenium = new DefaultSelenium(serverHost, serverPort, strBrowser, strURL);
   which will enable the follow-up work.
   
