@@ -1,7 +1,7 @@
 // declare a module
 var app = angular.module('corpoApp', ['ngRoute', 'restangular', 'btford.socket-io']);
 
-app.constant('serviceUrl', 'http://localhost:8080/');
+app.constant('serviceUrl', 'http://web2.mydevil.net:9615');
 
 app.config(['$routeProvider', '$locationProvider', 'RestangularProvider', 'serviceUrl', 
   function($routeProvider, $locationProvider, RestangularProvider, serviceUrl) {

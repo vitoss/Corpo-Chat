@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from Frontend.views import homepage
+from Frontend.views import homepage, login, logout, userIsLogged
 from django.contrib import admin
 admin.autodiscover()
 
@@ -10,4 +10,8 @@ urlpatterns = patterns('',
     
     url(r'^admin/', include(admin.site.urls)),
     url(r'^[\w]*$', homepage),
+    url(r'^login/', login),
+    url(r'^logout/', logout),
+    url(r'^userIsLogged/', userIsLogged)
+
 )

@@ -3,7 +3,7 @@
 {% block title %}Corpo Chat{% endblock %}
 
 {% block content %}
-<a href="" id="signin-button"><i class="fi-social-google-plus"></i> Sign in with Google</a>
+
 <div ng-app="corpoApp" ng-controller="SessionCtrl">
   <div class="fixed">
 
@@ -53,24 +53,9 @@
 <script src="{% static "scripts/controllers/new.js" %}"></script>
 
 <script>
+  $
   $(document).foundation();
 	OAuth.initialize('oAvQ7MB206sgXfqBfrKf80DMYps');
-$(document).ready(function() {
-	$("#signin-button").click(function(event) {
-			event.preventDefault();
-			OAuth.popup('google', function(err, res) {
-		    		res.get('/oauth2/v1/userinfo?alt=json').done(function(me) {
-		       			alert(me.email);
-				});
-			});
-		});
-	
-});
-
-
-
-
-
   
 </script>
 

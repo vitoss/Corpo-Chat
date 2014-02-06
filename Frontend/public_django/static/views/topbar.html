@@ -1,4 +1,4 @@
-<div>
+<div ng-controller="topbarCtrl">
 
   <ul class="title-area">
     <li class="name">
@@ -14,7 +14,8 @@
 
     <!-- Left Nav Section -->
     <ul class="left">
-      <li></li>
+      <li ng-hide="show"><a href="#" ng-click="login()"><i class="fi-social-google-plus"></i> Sign in with Google</a></li>
+      <li ng-show="show"><a href="#" ng-click="logout()"><i class="fi-power"></i>Logout</a></li>
       <li><a href="/"><i class="fi-plus"></i> Join existing room</a></li>
       <li>
         <a href="/new"><i class="fi-page-add"></i> Create room</a>
@@ -26,7 +27,5 @@
     </ul>
   </section>
 </div>
-
-
 
 
