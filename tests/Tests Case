@@ -212,4 +212,26 @@ Step_id            Action                                           Results
     4      Click the buttont to log in.                          Application homepage is opened.
     5      The verification that rooms on top bar appear         Rooms appear on top bar
 
+IT3
+
+As a User when posting message I can use hashtags.
+
+  TC014_A
+Step_id            Action                                           Results
+    1      TC004_A
+    2      Click the textbox and use hashtag                    Hashtag appear in chat box as blue text
+
+  TC014_B
+Step_id            Action                                           Results
+    1      TC014_A
+    2      Click the Hashtag                                    Directed to the hashtag
+
+As a User when posting message I can user hashtag in form of another user login name and mention him in the message.
+
+  TC014_A
+Step_id            Action                                                                         Results
+    1      TC004_A
+    2      Click the textbox and use hashtag  in form of another user name                 Hashtag appear in chat box as blue text
+    3      The verification that that another user get a massage that hi was hastag        Another user get a massage that hi was hastag
+
 
