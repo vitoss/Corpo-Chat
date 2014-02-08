@@ -6,7 +6,7 @@ As a User I would like to log in to the application using Google Account
  Step_id              Action                                               Results
     1       Run application.                                      Open a login window.
     2       Enter correct login and password.                     Show text in special field.
-    4       Click the buttont to log in.                          Application homepage is opened.
+    3       Click the buttont to log in.                          Application homepage is opened.
     
   TC001_B
  Step_id         Action                                           Results
@@ -26,14 +26,14 @@ As a User I would like to log in to the application using Google Account
   TC001_E
  Step_id             Action                                  Results
     1       Run application.                           Login window is open.
-    3       Enter incorrect password.                  Show text in special field.
-    4       Click the buttont to log in.               Homepage wasn't opened and show information about this mistake.
+    2       Enter incorrect password.                  Show text in special field.
+    3       Click the buttont to log in.               Homepage wasn't opened and show information about this mistake.
 		
   TC001_F
  Step_id              Action                                   Results
     1       Run application.                           Login window is open.
-    3       Enter login with special Signs.            Show text in special field.
-    4       Click the buttont to log in.               Homepage wasn't opened  and show information about this mistake.
+    2       Enter login with special Signs.            Show text in special field.
+    3       Click the buttont to log in.               Homepage wasn't opened  and show information about this mistake.
 
 
 As a User I would like to automaticaly log in into app if I’m already authenticated.
