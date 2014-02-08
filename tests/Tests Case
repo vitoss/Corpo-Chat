@@ -263,16 +263,21 @@ As a User I would like to create new room.
   TC008_A
  Step_id            Action                                           Results
     1      TC001_A
-    2      Click the button building new room.                Attempt to open window with page to creating new room.
-    3      The verification whether room was create.          Room is create.
-    
+    2      Click the button building new room.                Open window with page to creating new room.
+    3	   Enter room name and press "create"                 Room is create.
+
   TC008_B
  Step_id            Action                                           Results
     1      TC001_A
     2      Click the button building new room.                Attempt creating new room.
-    3      The verification whether room was create.          Room isn't create.
-    4      Writing information about the mistake.             Showing this information.
+    3      Enter room name " " and press "create"             Room isn't create and show information about the mistake.
 
+  TC008_C
+    1      TC001_A
+    2      Click the button building new room.                Attempt creating new room.
+    3      Enter room name for example " ala ma kota " 
+           and press "create"                                 Room is create. Name room "ala ma kota"
+    
 As a Room Owner I would like to close room.
 
   TC009_A
