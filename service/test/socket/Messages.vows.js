@@ -76,7 +76,7 @@ vows.describe('Messages API')
             socket.on('msg', function(data) { promise.emit('success', data); });
             socket2.on('greetings', function(data) { 
                 console.log('Socket 2 greets'); 
-                socket2.emit('msg', {room: dataConfig.roomId, content: 'simple message'}); 
+                socket2.emit('msg', {room: dataConfig.roomId, content: 'simple message', author: 'admin@goo.com'}); 
             });
 
             socket.emit('subscribe', {room: dataConfig.roomId});
@@ -110,7 +110,7 @@ vows.describe('Messages API')
                 socket = getSocket(); 
 
             socket.on('error', function(data) { promise.emit('success', data); });
-            socket.emit('msg', {room: 'notexisting', content: 'simple message'});
+            socket.emit('msg', {room: 'notexisting', content: 'simple message', author: 'admin@goo.com'});
             
             return promise;
         },
@@ -129,7 +129,30 @@ vows.describe('Messages API')
             
             socket.on('greetings', function(data) { 
                 console.log('Socket greets'); 
-                socket.emit('msg', {room: dataConfig.roomId, content: 'simple message'}); 
+                socket.emit('msg', {room: dataConfig.roomId, content: 'simple message', author: 'admin@goo.com'}); 
+            });
+
+            socket.emit('subscribe', {room: dataConfig.roomId});
+            
+            return promise;
+        },
+
+        'we should get that message': function(err, data) {
+            assert.isNotNull(data);
+        }
+    },
+    'after sending first message form unknown user, user is created and message is confirmed': {
+        topic: function() {
+            var promise = new(events.EventEmitter),
+                socket = getSocket();
+
+            //confirmation
+            socket.on('msg', function(data) { promise.emit('success', data); });
+            
+            socket.on('greetings', function(data) { 
+                console.log('Socket greets'); 
+                var unknownEmail = 'unk'+(new Date())+'@goo.com';
+                socket.emit('msg', {room: dataConfig.roomId, content: 'simple message from unknown user', author: unknownEmail}); 
             });
 
             socket.emit('subscribe', {room: dataConfig.roomId});
