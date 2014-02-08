@@ -139,15 +139,20 @@ As a User I would like to create new room.
   TC008_A
  Step_id            Action                                           Results
     1      TC001_A
-    2      Click the button building new room.                Attempt to open window with page to creating new room.
-    3      The verification whether room was create.          Room is create.
-    
+    2      Click the button building new room.                Open window with page to creating new room.
+    3	   Enter room name and press ‘create’                 Room is create.
+
   TC008_B
  Step_id            Action                                           Results
     1      TC001_A
     2      Click the button building new room.                Attempt creating new room.
-    3      The verification whether room was create.          Room isn't create.
-    4      Writing information about the mistake.             Showing this information.
+    3      Enter room name ‘ ‘ and press ‘create’             Room isn't create and show information about the mistake.
+
+  TC008_C
+    1      TC001_A
+    2      Click the button building new room.                Attempt creating new room.
+    3      Enter room name for example ‘ ala ma kota ‘ 
+           and press "create"                                 Room is create. Name room ‘ala ma kota’
 
 As a Room Owner I would like to close room.
 
@@ -160,4 +165,19 @@ As a Room Owner I would like to close room.
 IT2
     
 As a Room Owner I would like the room to exists even If I’m logged out.
+
   TC010_A
+ Step_id            Action                                           Results
+    1      TC008_A
+    2      Click the button ‘Log out’                         Back to Home page
+    3      Click my room                                      Enter my room
+
+As a User I would like to inspect history of messages of chat room.
+
+  TC011_A
+Step_id            Action                                            Results
+    1      TC004_A
+    2      Check ‘Chat box (messages)’                       See all chat history
+
+As a User I can join many rooms and quickly switch between them.
+
