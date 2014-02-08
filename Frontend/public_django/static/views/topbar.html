@@ -21,8 +21,10 @@
         <a href="/new"><i class="fi-page-add"></i> Create room</a>
       </li>
       <li class="divider"></li>
-      <li ng-repeat="room in activeRooms"><a ng-attr-href="/{{room._id}}" ng-bind="room.name">
-        <i class="fi-lightbulb" ng-show="room.indicator"></i></a>
+      <li ng-repeat="room in activeRooms">
+        <a ng-attr-href="/{{room._id}}" ng-bind="room.name" class="roomAnchor">
+          <i class="fi-lightbulb" ng-show="room.indicator"></i>
+        </a>
       </li>
     </ul>
   </section>
