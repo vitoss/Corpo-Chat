@@ -159,7 +159,7 @@ As a Room Owner I would like to close room.
   TC009_A
  Step_id            Action                                           Results
     1      TC004_A
-    2      Click the button closing room.                          Room is closed.
+    2      Click the button closing room.                     Room is closed.
 
 
 IT2
@@ -185,31 +185,31 @@ As a User I can join many rooms and quickly switch between them.
   TC012_A
 Step_id            Action                                           Results
     1      TC001_A
-    2      Click first Room name                                             Enter room
+    2      Click first Room name                                  Enter room
     3      Click logo button on the top bar                       Back to Home page
     4      Click second Room name                                 Enter second room
-    5      Click first Room name button on the top bar    Enter First room
-    6      Click second Room name button on the top bar     Enter Second room   
+    5      Click first Room name button on the top bar            Enter First room
+    6      Click second Room name button on the top bar           Enter Second room   
 
   TC012_B
 Step_id            Action                                           Results
     1      TC001_A
-    2      Click first Room name                                             Enter room
+    2      Click first Room name                                  Enter room
     3      Click logo button on the top bar                       Back to Home page
     4      Click second Room name                                 Enter second room
-    5      Click first Room name button on the top bar    Enter First room
-    6      Click second Room name button on the top bar     Enter Second room   
-    7      Click the button ‘Log out’                                Back to Home page
-    8      The verification that rooms on top bar disappear            Rooms disappear on top bar
+    5      Click first Room name button on the top bar            Enter First room
+    6      Click second Room name button on the top bar           Enter Second room   
+    7      Click the button ‘Log out’                             Back to Home page
+    8      The verification that rooms on top bar disappear       Rooms disappear on top bar
 
 As a User after log in I would like to have my chat sessions restored.
 
   TC013_A
 Step_id            Action                                           Results
     1      TC012_B
-    2      Click the button ‘Log in’ on top bar                 Open the login window
+    2      Click the button ‘Log in’ on top bar                  Open the login window
     3      Enter correct login and password.                     Show text in special field.
     4      Click the buttont to log in.                          Application homepage is opened.
-    5      The verification that rooms on top bar appear            Rooms appear on top bar
+    5      The verification that rooms on top bar appear         Rooms appear on top bar
 
 
