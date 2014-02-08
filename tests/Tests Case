@@ -169,7 +169,8 @@ As a Room Owner I would like the room to exists even If I’m logged out.
   TC010_A
  Step_id            Action                                           Results
     1      TC008_A
-    2      Click the button ‘Log out’                         Back to Home page
+    2      Click the button ‘Log out’                         Back to Home page.
+    3      The verification that room is still exist.         Room is still exist.
     3      Click my room                                      Enter my room
 
 As a User I would like to inspect history of messages of chat room.
