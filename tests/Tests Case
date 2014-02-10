@@ -179,12 +179,14 @@ As a User I would like to create new room.
     3      Enter room name with special sign and press ‘create’       Room isn't create and show information about the mistake
 
 
-As a Room Owner I would like to close room.
+As a Room Owner I would like to close room.(?)
 
   TC009_A
  Step_id            Action                                     Results
-    1      TC004_A
-    2      Click the button closing room                  Room is closed
+    1      TC003_A
+    2      Click the button opening the setting room      Show the window with the setting room
+    3      Tick the option that room must be closed       Show this tick
+    4      Click the button stressing changes             Closed the window with setting room
 
 
 
@@ -264,41 +266,65 @@ As a User when posting message I can user hashtag in form of another user login 
   TC023_A
  Step_id            Action                                                                         Results
     1      TC004_A
-    2      Click the textbox and use hashtag  in form of another user name                 Hashtag appear in chat box as blue text
-    3      The verification that that another user get a massage that hi was hastag        Another user get a massage that hi was hastag
+    2      Click the textbox and use hashtag in form of another user name            Hashtag appear in chat box as blue text
+    3      The verification that another user get a massage that he was hastag       Another user get a massage that hi was hastag
 
 
-As a Mentioned User I would like to get message by mail/sms about mention * (message content and link to discussion).
+As a Mentioned User I would like to get message by mail/sms about mention * (message content and link to discussion).(?)
 
   TC024_A
- Step_id          Action                             Results
-    1
-    
+ Step_id          Action                                                                        Results
+    1      TC004_A
+    2      Click the textbox and use hashtag in form of another user name         Hashtag appear in chat box as blue text
+    3      Open a gmail account mentioned user                                    Account mail mentioned user is open
+    4      The verification that mentioned user get message about mention         Mentioned user get a massage that hi was hastag
+
     
 As a User I would like to clearly see which messages on message feed are mine.
 
-  TC025_A         Action                            Results
- Step_id
-    1
+  TC025_A
+ Step_id         Action                            Results
+    1      TC005_A
+    2      The verification that identifier at my text massage is the same       
+           as the identifier at the previous message of other user               Identifiers are diffrent
     
     
 As a Logged User who was mentioned I would like see notification in app * (do not send mail/sms).
 
-  TC026_A         Action                            Results
- Step_id
+  TC026_A
+ Step_id         Action                            Results
     1
     
     
 As a User I would like to know if there is a new message in any other open inactive room * (on other tab).
 
-  TC027_A         Action                            Results
- Step_id
+  TC027_A
+ Step_id         Action                            Results
     1
     
     
 As a Room Owner I would like to secure room with password.
 
-  TC028_A          Action                            Results
- Step_id
-    1
+  TC028_A
+ Step_id            Action                                                               Results
+    1      TC003_A
+    2      Click the button opening the setting room                          Show the window with the setting room
+    3      Tick the option that room must be secured with the password        Lifting a blockade of text-field for entering the password
+    4      Write password in the correct form                                 Show text in special field
+    5      Click the button stressing changes                                 Closed the window with setting room
     
+  TC028_B
+ Step_id            Action                                                               Results
+    1      TC003_A
+    2      Click the button opening the setting room                          Show the window with the setting room
+    3      Tick the option that room must be secured with the password        Lifting a blockade of text-field for entering the password
+    4      Write password too short                                           Show text in special field
+    5      Click the button stressing changes                                 The window with setting room wasn't closed, show information about password is too short
+    
+  TC028_C
+ Step_id            Action                                                               Results
+    1      TC003_A
+    2      Click the button opening the setting room                          Show the window with the setting room
+    3      Tick the option that room must be secured with the password        Lifting a blockade of text-field for entering the password
+    4      Write password with special signs                                  Show text in special field
+    5      Click the button stressing changes                                 The window with setting room wasn't closed, show information about password include special signs
