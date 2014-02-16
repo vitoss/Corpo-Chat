@@ -4,36 +4,42 @@ As a User I would like to log in to the application using Google Account
 
   TC001_A
  Step_id              Action                                               Results
-    1       Run application.                                      Open a login window.
-    2       Enter correct login and password.                     Show text in special field.
-    3       Click the buttont to log in.                          Application homepage is opened.
+    1       Run application                                      Open a login window
+    2       Enter correct login and password                     Show text in special fields
+    3       Click the buttont to log in                          Application homepage is opened
     
   TC001_B
- Step_id         Action                                           Results
-   1        Run application.                         Login window is open and receive massage that is currently busy.
+ Step_id        Action                                           Results
+    1       Run application                         Login window is open and receive massage that is currently busy
 		
   TC001_C
  Step_id             Action                                      Results
-    1       Run application.                            Login window is open.
-    2       Run application second time.                Receive massage that aplication is already in use.
+    1       Run application                            Login window is open
+    2       Run application second time                Receive massage that aplication is already in use
  
   TC001_D
  Step_id             Action                                     Results
-    1       Run application.                           Login window is open.
-    2       Enter incorrect login.                     Show text in special field.
-    3       Click the buttont to log in.               Homepage wasn't opened and show information about this mistake.
+    1       Run application                           Login window is open
+    2       Enter incorrect login                     Show text in special field
+    3       Click the buttont to log in               Homepage wasn't opened and show information about this mistake
 		
   TC001_E
  Step_id             Action                                  Results
-    1       Run application.                           Login window is open.
-    2       Enter incorrect password.                  Show text in special field.
-    3       Click the buttont to log in.               Homepage wasn't opened and show information about this mistake.
+    1       Run application                           Login window is open
+    2       Enter incorrect password                  Show text in special field
+    3       Click the buttont to log in               Homepage wasn't opened, show information about password in incorrect form
 		
   TC001_F
  Step_id              Action                                   Results
-    1       Run application.                           Login window is open.
-    2       Enter login with special Signs.            Show text in special field.
-    3       Click the buttont to log in.               Homepage wasn't opened  and show information about this mistake.
+    1       Run application                           Login window is open
+    2       Enter login with special Signs            Show text in special field
+    3       Click the buttont to log in               Homepage wasn't opened, show information about login in incorrect form
+
+  TC001_G
+ Step_id             Action                                           Results
+    1     Run application                                      Login window is open
+    2     Enter login and password down without no signs       Show zero signs in special fields
+    3     Click the buttont to log in                          Homepage wasn't opened, show information about login in incorrect form
 
 
 As a User I would like to automaticaly log in into app if I’m already authenticated.
@@ -41,15 +47,15 @@ As a User I would like to automaticaly log in into app if I’m already authenti
   TC002_A
  Step_id            Action                                    Results
     1      TC001_A
-    2      Close application.                          Homepage is closed.
-    3      Run application again.                      Application homepage is displayed.
+    2      Close application                          Homepage is closed
+    3      Run application again                      Application homepage is displayed
 
   TC002_B
  Step_id            Action                                    Results
     1      TC001_A
-    2      Click logout button.                        Login window is displayed.
-    3      Close application.                          Application is closed.
-    4      Run application again.                      Login window is displayed.
+    2      Click logout button                        Login window is displayed
+    3      Close application                          Application is closed
+    4      Run application again                      Login window is displayed
     
 
 As a User I would like to search through existing rooms.
@@ -57,66 +63,89 @@ As a User I would like to search through existing rooms.
   TC003_A
  Step_id            Action                                        Results
     1      TC001_A
-    2      Write correct title searching room.            Show text in special textbox.
-    3      Click button to saerch.                        Show the list rooms.
+    2      Write correct title searching room            Show text in special textbox
+    3      Click button to saerch                        Show the list rooms
     
   TC003_B
  Step_id            Action                                            Results
     1      TC001_A
-    2      Write incorrect title searching room.           Show text in special textbox.
-    3      Click button to saerch.                         No rooms were found and show information about this mistake.
+    2      Enter space before and after corect title, for example ' ala ma kota '    Show text in special textbox.
+    3      Click button to saerch                                                    Show the list room with tittle 'ala ma kota'    
+    
+  TC003_C
+ Step_id            Action                                            Results
+    1      TC001_A
+    2      Write room name for example ‘ ‘           Show text in special textbox
+    3      Click button to saerch                   No rooms were found and show information about this mistake
+    
+  TC003_D
+ Step_id            Action                                            Results
+    1      TC001_A
+    2      Enter correct tittle with special Signs         Show text in special textbox
+    3      Click button to saerch.                         No rooms were found and show information about this mistake
+    
+  TC003_E
+ Step_id            Action                                          Results
+    1      TC001_A
+    2      Write down no signs in field tittle room        Show zero signs in special textbox
+    3      Click button to saerch.                         No rooms were found and show information about this mistake
+
+  TC003_F
+ Step_id           Action                                       Results
+    1      TC001_A
+    2      Write tittle room to long                 Show text in special textbox
+    3      Click button to search                    No roomswere found and show information about this mistake
     
 As a User I would like to join existing room.
 
   TC004_A
- Step_id            Action                                           Results
-    1      TC001_A
-    2      Click search for 'Room 1'.                      'Room 1' is found on list.
-    3      Click Join button.                              'Room 1' is opened.
+ Step_id            Action                                     Results
+    1      TC003_A
+    2      Click Join button                           'Room 1' is opened
     
   TC004_B
- Step_id            Action                                          Results
-    1      TC001_A
-    2      Click search for 'Room 1'.            Room1 is not found on list and show information about this mistake.
-    
-  TC004_C
- Step_id            Action                                                    Results
-    1      TC001_A
-    2      Click search for 'Room 1'.                        'Room 1' is found on list.
-    3      Click Join button twice fast.                     'Room 1' is opened only once.
+ Step_id            Action                                        Results
+    1      TC003_A
+    2      Click Join button twice fast              'Room 1' is opened only once
 
 
 As a User I would like to post message in chat room.
 
   TC005_A
- Step_id            Action                                                      Results
+ Step_id            Action                                             Results
     1      TC004_A
-    2      Write correct message in textbox.                                    Show text in this textbox.
-    3      Press 'Enter' button.                                        Message appear on chat board.
+    2      Write correct message in textbox                   Show text in this textbox.
+    3      Press 'Enter' button                               Message appear on chat board.
     
   TC005_B
-  Step_id            Action                                                      Results
+  Step_id            Action                                                Results
     1    TC004_A
-    2    Write message more than 1000 signs in textbox.           Show text in this textbox.
-    3    Press 'Enter' button.                                    Massage not appear on chat board, text is to long.
+    2    Write message more than 1000 signs in textbox           Show text in this textbox
+    3    Press 'Enter' button                                    Massage not appear on chat board, text is to long
 
   TC005_C
  Step_id            Action                                                  Results
     1    TC004_A
-    2    Post message include zero signs in textbox.              Show text in this textbox.
-    3    Press 'Enter' button.                                    Button is blocked.
+    2    Post message include zero signs in textbox              Show text in this textbox
+    3    Press 'Enter' button                                    Button is blocked
+    
+  TC005_D
+  Step_id            Action                                                Results
+    1    TC004_A
+    2    Write message witch special signs in textbox           Show text in this textbox
+    3    Press 'Enter' button                                   Massage not appear on chat board, text in incorrect form
 
 As a User I leave room.
 
   TC006_A
- Step_id           Action                                                Results
+ Step_id           Action                                            Results
     1    TC004_A
-    2    Click the button leaving a room.                       Room is closed.Homepage is opened.
+    2    Click the button leaving a room                  Room is closed.Homepage is opened.
     
   TC006_B
  Step_id           Action                                                Results
     1    TC004_A
-    2    Click the button closing an application.               Applicantion is closed. Room is left.
+    2    Click the button closing an application            Applicantion is closed. Room is left
     
 
 As a User I would like to see who send other messages. Especially see their avarat and login name.
@@ -124,66 +153,85 @@ As a User I would like to see who send other messages. Especially see their avar
   TC007_A
  Step_id                 Action                                                Results
     1    TC004_A
-    2    The verification whether any message is on chat board.        On chat board are massages.
-    3    Click the message.                                            Window with login name is open.
+    2    The verification whether any message is on chat board         On chat board are massages
+    3    Click the message                                             Window with login name is open
     
   TC007_B
  Step_id                 Action                                                Results
     1    TC004_A
-    2    The verification whether any message is on chat board.        On chat board aren't no massages.
-    3    Click on textbox where must be message.                       Textbox is blocked.
+    2    The verification whether any message is on chat board         On chat board aren't no massages
+    3    Click on textbox where must be message                        Textbox is blocked
 
     
 As a User I would like to create new room.
 
   TC008_A
- Step_id            Action                                           Results
+ Step_id            Action                                                Results
     1      TC001_A
-    2      Click the button building new room.                Open window with page to creating new room.
-    3	   Enter room name and press ‘create’                 Room is create.
+    2      Click the button building new room                 Open window with page to creating new room
+    3	   Enter correct room name and press ‘create’         Room is create
 
   TC008_B
  Step_id            Action                                           Results
     1      TC001_A
-    2      Click the button building new room.                Attempt creating new room.
-    3      Enter room name ‘ ‘ and press ‘create’             Room isn't create and show information about the mistake.
+    2      Click the button building new room                Attempt creating new room
+    3      Enter room name ‘ ‘ and press ‘create’            Room isn't create and show information about the mistake
 
   TC008_C
+ Step_id            Action                                           Results
+    1      TC001_A
+    2      Click the button building new room                Attempt creating new room
+    3      Enter room name ‘‘ and press ‘create’             Room isn't create and show information about the mistake
+
+  TC008_D
     1      TC001_A
     2      Click the button building new room.                Attempt creating new room.
     3      Enter room name for example ‘ ala ma kota ‘ 
            and press "create"                                 Room is create. Name room ‘ala ma kota’
+           
+  TC008_E
+ Step_id            Action                                                    Results
+    1      TC001_A
+    2      Click the button building new room                         Attempt creating new room
+    3      Enter room name with special sign and press ‘create’       Room isn't create and show information about the mistake
 
-As a Room Owner I would like to close room.
+
+
+As a Room Owner I would like to close room.(?)
 
   TC009_A
- Step_id            Action                                           Results
-    1      TC004_A
-    2      Click the button closing room.                     Room is closed.
+ Step_id            Action                                     Results
+    1      TC003_A
+    2      Click the button opening the setting room      Show the window with the setting room
+    3      Tick the option that room must be closed       Show this tick
+    4      Click the button stressing changes             Closed the window with setting room
+
 
 
 IT2
     
 As a Room Owner I would like the room to exists even If I’m logged out.
 
-  TC010_A
+  TC011_A
  Step_id            Action                                           Results
     1      TC008_A
-    2      Click the button ‘Log out’                         Back to Home page.
-    3      The verification that room is still exist.         Room is still exist.
+    2      Click the button ‘Log out’                         Back to Home page
+    3      The verification that room is still exist          Room is still exist
     3      Click my room                                      Enter my room
+
 
 As a User I would like to inspect history of messages of chat room.
 
-  TC011_A
-Step_id            Action                                            Results
+  TC012_A
+ Step_id            Action                                            Results
     1      TC004_A
     2      Check ‘Chat box (messages)’                       See all chat history
 
+
 As a User I can join many rooms and quickly switch between them.
 
-  TC012_A
-Step_id            Action                                           Results
+  TC013_A
+ Step_id            Action                                           Results
     1      TC001_A
     2      Click first Room name                                  Enter room
     3      Click logo button on the top bar                       Back to Home page
@@ -191,8 +239,9 @@ Step_id            Action                                           Results
     5      Click first Room name button on the top bar            Enter First room
     6      Click second Room name button on the top bar           Enter Second room   
 
-  TC012_B
-Step_id            Action                                           Results
+
+  TC013_B
+ Step_id            Action                                           Results
     1      TC001_A
     2      Click first Room name                                  Enter room
     3      Click logo button on the top bar                       Back to Home page
@@ -202,14 +251,98 @@ Step_id            Action                                           Results
     7      Click the button ‘Log out’                             Back to Home page
     8      The verification that rooms on top bar disappear       Rooms disappear on top bar
 
+
 As a User after log in I would like to have my chat sessions restored.
 
-  TC013_A
-Step_id            Action                                           Results
-    1      TC012_B
+  TC014_A
+ Step_id            Action                                           Results
+    1      TC013_B
     2      Click the button ‘Log in’ on top bar                  Open the login window
     3      Enter correct login and password.                     Show text in special field.
     4      Click the buttont to log in.                          Application homepage is opened.
     5      The verification that rooms on top bar appear         Rooms appear on top bar
 
 
+
+IT3
+
+As a User when posting message I can use hashtags.
+
+  TC021_A
+ Step_id            Action                                           Results
+    1      TC004_A
+    2      Click the textbox and use hashtag                    Hashtag appear in chat box as blue text
+
+  TC022_B
+ Step_id            Action                                           Results
+    1      TC014_A
+    2      Click the Hashtag                                    Directed to the hashtag
+
+
+As a User when posting message I can user hashtag in form of another user login name and mention him in the message.
+
+  TC023_A
+ Step_id            Action                                                                         Results
+    1      TC004_A
+    2      Click the textbox and use hashtag in form of another user name            Hashtag appear in chat box as blue text
+    3      The verification that another user get a massage that he was hastag       Another user get a massage that hi was hastag
+
+
+As a Mentioned User I would like to get message by mail/sms about mention * (message content and link to discussion).(?)
+
+  TC024_A
+ Step_id          Action                                                                        Results
+    1      TC004_A
+    2      Click the textbox and use hashtag in form of another user name         Hashtag appear in chat box as blue text
+    3      Open a gmail account mentioned user                                    Account mail mentioned user is open
+    4      The verification that mentioned user get message about mention         Mentioned user get a massage that hi was hastag
+
+    
+As a User I would like to clearly see which messages on message feed are mine.
+
+  TC025_A
+ Step_id         Action                            Results
+    1      TC005_A
+    2      The verification that identifier at my text massage is the same       
+           as the identifier at the previous message of other user               Identifiers are diffrent
+    
+    
+As a Logged User who was mentioned I would like see notification in app * (do not send mail/sms).
+
+  TC026_A
+ Step_id         Action                            Results
+    1
+    
+    
+As a User I would like to know if there is a new message in any other open inactive room * (on other tab).
+
+  TC027_A
+ Step_id         Action                            Results
+    1
+    
+    
+As a Room Owner I would like to secure room with password.
+
+  TC028_A
+ Step_id            Action                                                               Results
+    1      TC003_A
+    2      Click the button opening the setting room                          Show the window with the setting room
+    3      Tick the option that room must be secured with the password        Lifting a blockade of text-field for entering the password
+    4      Write password in the correct form                                 Show text in special field
+    5      Click the button stressing changes                                 Closed the window with setting room
+    
+  TC028_B
+ Step_id            Action                                                               Results
+    1      TC003_A
+    2      Click the button opening the setting room                          Show the window with the setting room
+    3      Tick the option that room must be secured with the password        Lifting a blockade of text-field for entering the password
+    4      Write password too short                                           Show text in special field
+    5      Click the button stressing changes                                 The window with setting room wasn't closed, show information about password is too short
+    
+  TC028_C
+ Step_id            Action                                                               Results
+    1      TC003_A
+    2      Click the button opening the setting room                          Show the window with the setting room
+    3      Tick the option that room must be secured with the password        Lifting a blockade of text-field for entering the password
+    4      Write password with special signs                                  Show text in special field
+    5      Click the button stressing changes                                 The window with setting room wasn't closed, show information about password include special signs
