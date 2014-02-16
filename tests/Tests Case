@@ -95,6 +95,7 @@ As a User I would like to search through existing rooms.
     1      TC001_A
     2      Write tittle room to long                 Show text in special textbox
     3      Click button to search                    No roomswere found and show information about this mistake
+
     
 As a User I would like to join existing room.
 
@@ -134,6 +135,7 @@ As a User I would like to post message in chat room.
     1    TC004_A
     2    Write message witch special signs in textbox           Show text in this textbox
     3    Press 'Enter' button                                   Massage not appear on chat board, text in incorrect form
+
 
 As a User I leave room.
 
@@ -196,7 +198,6 @@ As a User I would like to create new room.
     3      Enter room name with special sign and press ‘create’       Room isn't create and show information about the mistake
 
 
-
 As a Room Owner I would like to close room.(?)
 
   TC009_A
@@ -238,7 +239,6 @@ As a User I can join many rooms and quickly switch between them.
     4      Click second Room name                                 Enter second room
     5      Click first Room name button on the top bar            Enter First room
     6      Click second Room name button on the top bar           Enter Second room   
-
 
   TC013_B
  Step_id            Action                                           Results
@@ -346,3 +346,87 @@ As a Room Owner I would like to secure room with password.
     3      Tick the option that room must be secured with the password        Lifting a blockade of text-field for entering the password
     4      Write password with special signs                                  Show text in special field
     5      Click the button stressing changes                                 The window with setting room wasn't closed, show information about password include special signs
+
+
+
+IT4
+
+As a Administrator I would like to close any room.
+
+  TC031_A
+ Step_id           Action                    Results
+ 
+
+As a Administrator I would like to moderate messages.
+
+  TC032_A
+ Step_id           Action                    Results
+ 
+ 
+As a Administartor I would like to manage roles of other users * (give certain permissions).
+
+  TC033_A
+ Step_id           Action                    Results
+ 
+ 
+As a Administrator I would like to configure app * (for example message flood timeout/antyspam filter).
+
+  TC034_A
+ Step_id           Action                    Results
+
+
+As a Administartor I would like to broadcast message to all rooms * (e.g. maintenance time).
+
+  TC035_A
+ Step_id           Action                    Results
+
+
+As a Administartor I can inspect closed rooms.
+
+  TC036_A
+ Step_id           Action                    Results
+ 
+ 
+ 
+IT5
+
+As a User I would like to tag room.
+
+  TC041_A
+ Step_id           Action                    Results
+ 
+ 
+As a User I would link to search rooms by tags * (messages containing tags)
+
+  TC042_A
+ Step_id           Action                    Results
+
+
+As a User I can leave all rooms * (“all but this”).
+
+  TC043_A
+ Step_id           Action                    Results
+
+
+As a User I can post message to choosen room by email.
+
+  TC044_A
+ Step_id           Action                    Results
+
+
+As a User during search I would like to get information about room * (for example description, amount of active members or if it is secured with password).
+
+  TC045_A
+ Step_id           Action                    Results
+
+
+As a User I would like to see all messages from open rooms for quick preview.
+
+  TC046_A
+ Step_id           Action                    Results
+
+
+As a User I would like to click on quick-preview message and be switch to that room.
+
+  TC047_A
+ Step_id           Action                    Results
