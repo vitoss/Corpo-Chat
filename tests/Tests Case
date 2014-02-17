@@ -95,6 +95,7 @@ As a User I would like to search through existing rooms.
     1      TC001_A
     2      Write tittle room to long                 Show text in special textbox
     3      Click button to search                    No roomswere found and show information about this mistake
+
     
 As a User I would like to join existing room.
 
@@ -114,8 +115,8 @@ As a User I would like to post message in chat room.
   TC005_A
  Step_id            Action                                             Results
     1      TC004_A
-    2      Write correct message in textbox                   Show text in this textbox.
-    3      Press 'Enter' button                               Message appear on chat board.
+    2      Write correct message in textbox                   Show text in this textbox
+    3      Press 'Enter' button                               Message appear on chat board
     
   TC005_B
   Step_id            Action                                                Results
@@ -134,6 +135,7 @@ As a User I would like to post message in chat room.
     1    TC004_A
     2    Write message witch special signs in textbox           Show text in this textbox
     3    Press 'Enter' button                                   Massage not appear on chat board, text in incorrect form
+
 
 As a User I leave room.
 
@@ -196,7 +198,6 @@ As a User I would like to create new room.
     3      Enter room name with special sign and press ‘create’       Room isn't create and show information about the mistake
 
 
-
 As a Room Owner I would like to close room.(?)
 
   TC009_A
@@ -238,7 +239,6 @@ As a User I can join many rooms and quickly switch between them.
     4      Click second Room name                                 Enter second room
     5      Click first Room name button on the top bar            Enter First room
     6      Click second Room name button on the top bar           Enter Second room   
-
 
   TC013_B
  Step_id            Action                                           Results
@@ -317,8 +317,17 @@ As a Logged User who was mentioned I would like see notification in app * (do no
 As a User I would like to know if there is a new message in any other open inactive room * (on other tab).
 
   TC027_A
- Step_id         Action                            Results
-    1
+ Step_id         Action                                                Results
+    1      for first user(in first window): TC001_A
+    2      Click first Room name                                  Enter first room
+    3      Click logout button on the top bar                     Back to Home page
+    4      Click second Room name                                 Enter second room
+    5      for second user(in second window): TC001_A
+    6      Click first room first user                            Enter room
+    7      Post message in this room                              Message appear on chat board
+    8      for first user: the verification that show the tab     This tab is appear
+           in his second room, announcing the latest news in
+           his first room
     
     
 As a Room Owner I would like to secure room with password.
@@ -346,3 +355,102 @@ As a Room Owner I would like to secure room with password.
     3      Tick the option that room must be secured with the password        Lifting a blockade of text-field for entering the password
     4      Write password with special signs                                  Show text in special field
     5      Click the button stressing changes                                 The window with setting room wasn't closed, show information about password include special signs
+
+
+
+IT4
+
+As a Administrator I would like to close any room.
+
+  TC031_A
+ Step_id               Action                                              Results
+    1      Run application                                            Open a login window
+    2      Log in to the application as a Administrator               Open a homepage
+    3      Search through existing rooms                              Show the list rooms
+    4      Click the button option room opening the setting room      Show the window with the setting room
+    5      Tick the option that room must be closed                   Show this tick
+    6      Click the button stressing changes                         Closed the window with setting room
+
+As a Administrator I would like to moderate messages.
+
+  TC032_A
+ Step_id           Action                    Results
+ 
+ 
+As a Administartor I would like to manage roles of other users * (give certain permissions).
+
+  TC033_A
+ Step_id           Action                    Results
+    1      Run application                                            Open a login window
+    2      Log in to the application as a Administrator               Open a homepage
+    3      Search through register users                              Show the list users
+    4      Click the button option user opening the setting user      Show the window with the setting user
+    5      Tick the option what user can have                         Show this tick
+    6      Click the button stressing changes                         Closed the window with setting user
+ 
+ 
+As a Administrator I would like to configure app * (for example message flood timeout/antyspam filter).
+
+  TC034_A
+ Step_id           Action                    Results
+
+
+As a Administartor I would like to broadcast message to all rooms * (e.g. maintenance time).
+
+  TC035_A
+ Step_id           Action                    Results
+
+
+As a Administartor I can inspect closed rooms.
+
+  TC036_A
+ Step_id           Action                    Results
+ 
+ 
+ 
+IT5
+
+As a User I would like to tag room.
+
+  TC041_A
+ Step_id           Action                    Results
+ 
+ 
+As a User I would link to search rooms by tags * (messages containing tags)
+
+  TC042_A
+ Step_id           Action                    Results
+
+
+As a User I can leave all rooms * (“all but this”).
+
+  TC043_A
+ Step_id           Action                                                  Results
+    1      TC013_A
+    2      Click the button closed all room but not this      All rooms is closed apart from that which the user is in
+
+
+As a User I can post message to choosen room by email.
+
+  TC044_A
+ Step_id           Action                    Results
+
+
+As a User during search I would like to get information about room * (for example description, amount of active members or if it is secured with password).
+
+  TC045_A
+ Step_id         Action                                  Results
+    1     TC003_A
+    2     Click to the name of the room      Show the window with information about this room
+
+
+As a User I would like to see all messages from open rooms for quick preview.
+
+  TC046_A
+ Step_id           Action                    Results
+
+
+As a User I would like to click on quick-preview message and be switch to that room.
+
+  TC047_A
+ Step_id           Action                    Results
