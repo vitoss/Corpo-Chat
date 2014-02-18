@@ -4,9 +4,10 @@ As a User I would like to log in to the application using Google Account
 
   TC001_A
  Step_id              Action                                               Results
-    1       Run application                                      Open a login window
-    2       Enter correct login and password                     Show text in special fields
-    3       Click the buttont to log in                          Application homepage is opened
+    1       Run application                                      Open a homepage
+    2       Click the button 'Sing in' on the top bar            Open a login window
+    3       Enter correct login and password                     Show text in special fields
+    4       Click the buttont 'Log in'                           Again appear homepage with option for User
     
   TC001_B
  Step_id        Action                                           Results
@@ -14,32 +15,36 @@ As a User I would like to log in to the application using Google Account
 		
   TC001_C
  Step_id             Action                                      Results
-    1       Run application                            Login window is open
+    1       Run application                            Homepage is open
     2       Run application second time                Receive massage that aplication is already in use
  
   TC001_D
  Step_id             Action                                     Results
-    1       Run application                           Login window is open
-    2       Enter incorrect login                     Show text in special field
-    3       Click the buttont to log in               Homepage wasn't opened and show information about this mistake
+    1       Run application                               Homepage is open
+    2       Click the button 'Sing in' on the top bar     Open a login window
+    3       Enter incorrect login                         Show text in special field
+    4       Click the buttont 'Log in'                    Homepage wasn't appear again and show information about this mistake
 		
   TC001_E
- Step_id             Action                                  Results
-    1       Run application                           Login window is open
-    2       Enter incorrect password                  Show text in special field
-    3       Click the buttont to log in               Homepage wasn't opened, show information about password in incorrect form
+ Step_id             Action                                    Results
+    1       Run application                               Homepage is open
+    2       Click the button 'Sing in' on the top bar     Open a login window
+    3       Enter incorrect password                      Show text in special field
+    4       Click the buttont 'Log in'                    Homepage wasn't appear again and show information about password in incorrect form
 		
   TC001_F
- Step_id              Action                                   Results
-    1       Run application                           Login window is open
-    2       Enter login with special Signs            Show text in special field
-    3       Click the buttont to log in               Homepage wasn't opened, show information about login in incorrect form
+ Step_id              Action                                    Results
+    1       Run application                               Homepage is open
+    2       Click the button 'Sing in' on the top bar     Open a login window
+    3       Enter login with special Signs                Show text in special field
+    4       Click the buttont 'Log in'                    Homepage wasn't appear again and show information about login in incorrect form
 
   TC001_G
  Step_id             Action                                           Results
-    1     Run application                                      Login window is open
-    2     Enter login and password down without no signs       Show zero signs in special fields
-    3     Click the buttont to log in                          Homepage wasn't opened, show information about login in incorrect form
+    1     Run application                                      Homepage is open
+    2       Click the button 'Sing in' on the top bar          Open a login window
+    3     Enter login and password down without no signs       Show zero signs in special fields
+    4     Click the buttont 'Log in'                           Homepage wasn't appear again and show information about login in incorrect form
 
 
 As a User I would like to automaticaly log in into app if I’m already authenticated.
@@ -64,50 +69,50 @@ As a User I would like to search through existing rooms.
  Step_id            Action                                        Results
     1      TC001_A
     2      Write correct title searching room            Show text in special textbox
-    3      Click button to saerch                        Show the list rooms
+    3      Click button 'Search'                         Show the list rooms
     
   TC003_B
  Step_id            Action                                            Results
     1      TC001_A
     2      Enter space before and after corect title, for example ' ala ma kota '    Show text in special textbox.
-    3      Click button to saerch                                                    Show the list room with tittle 'ala ma kota'    
+    3      Click button 'Search'                                                     Show the list room with tittle 'ala ma kota'    
     
   TC003_C
  Step_id            Action                                            Results
     1      TC001_A
     2      Write room name for example ‘ ‘           Show text in special textbox
-    3      Click button to saerch                   No rooms were found and show information about this mistake
+    3      Click button to 'Search'                  No rooms were found and show information about this mistake
     
   TC003_D
  Step_id            Action                                            Results
     1      TC001_A
     2      Enter correct tittle with special Signs         Show text in special textbox
-    3      Click button to saerch.                         No rooms were found and show information about this mistake
+    3      Click button to 'Search'                        No rooms were found and show information about this mistake
     
   TC003_E
  Step_id            Action                                          Results
     1      TC001_A
     2      Write down no signs in field tittle room        Show zero signs in special textbox
-    3      Click button to saerch.                         No rooms were found and show information about this mistake
+    3      Click button 'Saerch'                           No rooms were found and show information about this mistake
 
   TC003_F
  Step_id           Action                                       Results
     1      TC001_A
     2      Write tittle room to long                 Show text in special textbox
-    3      Click button to search                    No roomswere found and show information about this mistake
+    3      Click button 'Search'                     No roomswere found and show information about this mistake
 
     
 As a User I would like to join existing room.
 
   TC004_A
- Step_id            Action                                     Results
+ Step_id            Action                                          Results
     1      TC003_A
-    2      Click Join button                           'Room 1' is opened
+    2      Click button with name room for example 'Room 1'     'Room 1' is opened
     
   TC004_B
- Step_id            Action                                        Results
+ Step_id            Action                                           Results
     1      TC003_A
-    2      Click Join button twice fast              'Room 1' is opened only once
+    2      Click button with name room twice fast            'Room 1' is opened only once
 
 
 As a User I would like to post message in chat room.
@@ -116,25 +121,25 @@ As a User I would like to post message in chat room.
  Step_id            Action                                             Results
     1      TC004_A
     2      Write correct message in textbox                   Show text in this textbox
-    3      Press 'Enter' button                               Message appear on chat board
+    3      Press 'Send' button                                Message appear on field 'Chat box'
     
   TC005_B
   Step_id            Action                                                Results
     1    TC004_A
     2    Write message more than 1000 signs in textbox           Show text in this textbox
-    3    Press 'Enter' button                                    Massage not appear on chat board, text is to long
+    3    Press 'Send' button                                     Massage not appear on field 'Chat box', text is to long
 
   TC005_C
  Step_id            Action                                                  Results
     1    TC004_A
     2    Post message include zero signs in textbox              Show text in this textbox
-    3    Press 'Enter' button                                    Button is blocked
+    3    Press 'Send' button                                     Button is blocked
     
   TC005_D
   Step_id            Action                                                Results
     1    TC004_A
     2    Write message witch special signs in textbox           Show text in this textbox
-    3    Press 'Enter' button                                   Massage not appear on chat board, text in incorrect form
+    3    Press 'Send' button                                    Massage not appear field 'Chat box', text in incorrect form
 
 
 As a User I leave room.
@@ -142,7 +147,7 @@ As a User I leave room.
   TC006_A
  Step_id           Action                                            Results
     1    TC004_A
-    2    Click the button leaving a room                  Room is closed.Homepage is opened.
+    2    Click the button 'Leave room'                  Room a room is left by the user.Homepage is opened
     
   TC006_B
  Step_id           Action                                                Results
@@ -155,14 +160,14 @@ As a User I would like to see who send other messages. Especially see their avar
   TC007_A
  Step_id                 Action                                                Results
     1    TC004_A
-    2    The verification whether any message is on chat board         On chat board are massages
-    3    Click the message                                             Window with login name is open
+    2    The verification whether any message is on filed 'Chat box'       In field 'Chat box' are massages
+    3    Click the message                                                 Window with login name is open
     
   TC007_B
  Step_id                 Action                                                Results
     1    TC004_A
-    2    The verification whether any message is on chat board         On chat board aren't no massages
-    3    Click on textbox where must be message                        Textbox is blocked
+    2    The verification whether any message is on field 'Chat box       In field 'Chat box' aren't no massages
+    3    Click on textbox where must be message                           Textbox is blocked
 
     
 As a User I would like to create new room.
@@ -170,42 +175,42 @@ As a User I would like to create new room.
   TC008_A
  Step_id            Action                                                Results
     1      TC001_A
-    2      Click the button building new room                 Open window with page to creating new room
-    3	   Enter correct room name and press ‘create’         Room is create
+    2      Click the button 'Create room' on the top bar      Open window with page to creating new room
+    3	   Enter correct room name in field 'Room name'       Room is create
+           and press button 'Create'         
 
   TC008_B
- Step_id            Action                                           Results
+ Step_id            Action                                                 Results
     1      TC001_A
-    2      Click the button building new room                Attempt creating new room
+    2      Click the button 'Create room' on the top bar     Open window with page to creating new room
     3      Enter room name ‘ ‘ and press ‘create’            Room isn't create and show information about the mistake
 
   TC008_C
- Step_id            Action                                           Results
+ Step_id            Action                                                    Results
     1      TC001_A
-    2      Click the button building new room                Attempt creating new room
-    3      Enter room name ‘‘ and press ‘create’             Room isn't create and show information about the mistake
+    2      Click the button 'Create room' on the top bar       Open window with page to creating new room
+    3      Enter room name ‘‘ and press ‘create’               Room isn't create and show information about the mistake
 
   TC008_D
+ Step_id            Action                                                    Results
     1      TC001_A
-    2      Click the button building new room.                Attempt creating new room.
-    3      Enter room name for example ‘ ala ma kota ‘ 
-           and press "create"                                 Room is create. Name room ‘ala ma kota’
+    2      Click the button 'Create room' on the top bar        Open window with page to creating new room
+    3      Enter room name for example ‘ ala ma kota ‘          Room is create. Name room ‘ala ma kota’
+           and press "create"                                 
            
   TC008_E
  Step_id            Action                                                    Results
     1      TC001_A
-    2      Click the button building new room                         Attempt creating new room
+    2      Click the button 'Create room' on the top bar              Open window with page to creating new room
     3      Enter room name with special sign and press ‘create’       Room isn't create and show information about the mistake
 
 
-As a Room Owner I would like to close room.(?)
+As a Room Owner I would like to close room.
 
   TC009_A
  Step_id            Action                                     Results
-    1      TC003_A
-    2      Click the button opening the setting room      Show the window with the setting room
-    3      Tick the option that room must be closed       Show this tick
-    4      Click the button stressing changes             Closed the window with setting room
+    1      TC004_A
+    2      Click the button 'Close room'                  Room a room is closed by the owner.Homepage is opened
 
 
 
@@ -232,24 +237,24 @@ As a User I would like to inspect history of messages of chat room.
 As a User I can join many rooms and quickly switch between them.
 
   TC013_A
- Step_id            Action                                           Results
+ Step_id            Action                                            Results
     1      TC001_A
-    2      Click first Room name                                  Enter room
-    3      Click logo button on the top bar                       Back to Home page
-    4      Click second Room name                                 Enter second room
-    5      Click first Room name button on the top bar            Enter First room
-    6      Click second Room name button on the top bar           Enter Second room   
+    2      Click first Room name                                   Enter room
+    3      Click button 'Join existing room' on the top bar        Back to Home page
+    4      Click second Room name                                  Enter second room
+    5      Click button witch first Room name on the top bar       Enter First room
+    6      Click button witch second Room name on the top bar      Enter Second room   
 
   TC013_B
- Step_id            Action                                           Results
+ Step_id            Action                                            Results
     1      TC001_A
-    2      Click first Room name                                  Enter room
-    3      Click logo button on the top bar                       Back to Home page
-    4      Click second Room name                                 Enter second room
-    5      Click first Room name button on the top bar            Enter First room
-    6      Click second Room name button on the top bar           Enter Second room   
-    7      Click the button ‘Log out’                             Back to Home page
-    8      The verification that rooms on top bar disappear       Rooms disappear on top bar
+    2      Click first Room name                                   Enter room
+    3      Click button 'Join existing room' on the top bar        Back to Home page
+    4      Click second Room name                                  Enter second room
+    5      Click button witch first Room name on the top bar       Enter First room
+    6      Click button witch second Room name on the top bar      Enter Second room   
+    7      Click the button ‘Log out’                              Back to Home page
+    8      The verification that rooms on top bar disappear        Rooms disappear on top bar
 
 
 As a User after log in I would like to have my chat sessions restored.
@@ -271,7 +276,7 @@ As a User when posting message I can use hashtags.
   TC021_A
  Step_id            Action                                           Results
     1      TC004_A
-    2      Click the textbox and use hashtag                    Hashtag appear in chat box as blue text
+    2      Click the textbox and use hashtag                    Hashtag appear in field 'Chat box' as blue text
 
   TC022_B
  Step_id            Action                                           Results
@@ -318,14 +323,11 @@ As a User I would like to know if there is a new message in any other open inact
 
   TC027_A
  Step_id         Action                                                Results
-    1      for first user(in first window): TC001_A
-    2      Click first Room name                                  Enter first room
-    3      Click logout button on the top bar                     Back to Home page
-    4      Click second Room name                                 Enter second room
-    5      for second user(in second window): TC001_A
-    6      Click first room first user                            Enter room
-    7      Post message in this room                              Message appear on chat board
-    8      for first user: the verification that show the tab     This tab is appear
+    1      for first user(in first window): TC013_A
+    2      for second user(in second window): TC013_A
+    3      Click button witch first Room name on the top bar      Enter First room
+    4      Post message in this room                              Message appear on chat board
+    5      for first user: the verification that show the tab     This tab is appear
            in his second room, announcing the latest news in
            his first room
     
@@ -364,12 +366,8 @@ As a Administrator I would like to close any room.
 
   TC031_A
  Step_id               Action                                              Results
-    1      Run application                                            Open a login window
-    2      Log in to the application as a Administrator               Open a homepage
-    3      Search through existing rooms                              Show the list rooms
-    4      Click the button option room opening the setting room      Show the window with the setting room
-    5      Tick the option that room must be closed                   Show this tick
-    6      Click the button stressing changes                         Closed the window with setting room
+    1      TC004_A
+    2      Click the button 'Close room'                  Room a room is closed by the Administrator.Homepage is opened
 
 As a Administrator I would like to moderate messages.
 
@@ -380,11 +378,10 @@ As a Administrator I would like to moderate messages.
 As a Administartor I would like to manage roles of other users * (give certain permissions).
 
   TC033_A
- Step_id           Action                    Results
-    1      Run application                                            Open a login window
-    2      Log in to the application as a Administrator               Open a homepage
+ Step_id           Action                                                    Results
+    1      TC001_A                                                    
     3      Search through register users                              Show the list users
-    4      Click the button option user opening the setting user      Show the window with the setting user
+    4      Click the button witch name user opening his setting       Show the window with the setting user
     5      Tick the option what user can have                         Show this tick
     6      Click the button stressing changes                         Closed the window with setting user
  
@@ -433,15 +430,41 @@ As a User I can leave all rooms * (“all but this”).
 As a User I can post message to choosen room by email.
 
   TC044_A
- Step_id           Action                    Results
+ Step_id           Action                                                    Results
+   1      Log in to user account e-mail                              Open account e-mail user
+   2      Click the button enabling to write the latest news         Appear special fields to write message
+   3      Write the correct tittle message include name room         Show this text in field tittle news
+   4      Write text correct message in special field                Show text in field contents news
+   3      Click the button to send this message                      Message is send
+   4      The verification that this text message appear in          Message appear in field 'Chat box' in choosen room
+          choosen room        
 
+  TC045_A
+ Step_id           Action                                                    Results
+   1      Log in to user account e-mail                                 Open account e-mail user
+   2      Click the button enabling to write the latest news            Appear special fields to write message
+   3      Write the correct tittle message include name room            Show this text in field tittle news
+   4      Write text message more than 1000 signs in special field      Show text in field contents news
+   3      Click the button to send this message                         Message is send
+   4      The verification that this text message appear in             Message not appear on field 'Chat box' in choosen room, text is to long
+
+  TC046_A
+ Step_id           Action                                                    Results
+   1      Log in to user account e-mail                                 Open account e-mail user
+   2      Click the button enabling to write the latest news            Appear special fields to write message
+   3      Write the correct tittle message include name room            Show this text in field tittle news
+   4      Writing no message text down(0 signs) in special field        Show text in field contents news
+   3      Click the button to send this message                         Message is send
+   4      The verification that this text message appear in             Message not appear on field 'Chat box' in choosen room, text is to short
+ 
 
 As a User during search I would like to get information about room * (for example description, amount of active members or if it is secured with password).
 
   TC045_A
- Step_id         Action                                  Results
+ Step_id         Action                                                  Results
     1     TC003_A
-    2     Click to the name of the room      Show the window with information about this room
+    2     The verification that on button witch name room        Button witch name room include information about this room
+          is description about this room
 
 
 As a User I would like to see all messages from open rooms for quick preview.
