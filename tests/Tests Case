@@ -439,7 +439,7 @@ As a User I can post message to choosen room by email.
    4      The verification that this text message appear in          Message appear in field 'Chat box' in choosen room
           choosen room        
 
-  TC045_A
+  TC044_B
  Step_id           Action                                                    Results
    1      Log in to user account e-mail                                 Open account e-mail user
    2      Click the button enabling to write the latest news            Appear special fields to write message
@@ -448,7 +448,7 @@ As a User I can post message to choosen room by email.
    3      Click the button to send this message                         Message is send
    4      The verification that this text message appear in             Message not appear on field 'Chat box' in choosen room, text is to long
 
-  TC046_A
+  TC044_C
  Step_id           Action                                                    Results
    1      Log in to user account e-mail                                 Open account e-mail user
    2      Click the button enabling to write the latest news            Appear special fields to write message
