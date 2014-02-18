@@ -410,13 +410,18 @@ IT5
 As a User I would like to tag room.
 
   TC041_A
- Step_id           Action                    Results
+ Step_id           Action                         Results
+    1      TC004_A
+    2      Click the button to tag room         Room is a tag
  
  
 As a User I would link to search rooms by tags * (messages containing tags)
 
   TC042_A
- Step_id           Action                    Results
+ Step_id           Action                                                Results
+    1      TC001_A
+    2      Tick the option that searching the room by name tags        Show this tick
+    3      Click the button 'Search'                                   Show the list rooms with name tags
 
 
 As a User I can leave all rooms * (“all but this”).
