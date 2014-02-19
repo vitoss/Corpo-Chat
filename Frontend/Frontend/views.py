@@ -10,7 +10,7 @@ def homepage(request):
 def userIsLogged(request):
 	result = []	
 	if ('isLogged' in request.session):
-		result.append({"isLogged":request.session['isLogged']})
+		result.append({"isLogged":request.session['isLogged'], "username":request.session['username']})
 		return HttpResponse(simplejson.dumps(result), mimetype='application/json')
 	else:
 		result.append({"isLogged":False})
@@ -19,11 +19,17 @@ def userIsLogged(request):
 def login(request):
 	result = []
 	
+	if ('username' in request.GET and request.GET['username']):
+        	username = request.GET['username']
+	else:
+		username = ""
+
 	if ('isLogged' in request.session):
-		result.append({"isLogged":request.session['isLogged']})
+		result.append({"isLogged":request.session['isLogged'], "username":request.session['username']})
 		return HttpResponse(simplejson.dumps(result), mimetype='application/json')
 	else:
 		request.session['isLogged'] = True
+		request.session['username'] = username
 		return HttpResponse("You have logged in successfully")
 
 def logout(request):

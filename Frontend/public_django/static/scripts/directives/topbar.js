@@ -13,6 +13,7 @@ angular.module('corpoApp')
 	 .done(function(data) {
 		if (data[0].isLogged){
 			$scope.show = true;
+			$scope.username = data[0].username;
 			$scope.$apply();		
 		};	
 	})
@@ -21,9 +22,12 @@ angular.module('corpoApp')
   
 	OAuth.popup('google', function(err, res) {
 		    res.get('/oauth2/v1/userinfo?alt=json').done(function(me) {
-			$.ajax("/login/" )
-				.done(function() {
+			$.ajax({
+				url: "/login/",
+				data: "username="+me.name
+				}).done(function() {
 				    $scope.show = true;
+				    $scope.username= me.name;
 				    $scope.$apply();
 				})
 		});
@@ -36,7 +40,6 @@ angular.module('corpoApp')
 		.done(function() {
 			$scope.show = false;
 			$scope.$apply();
-		    alert("success");
           })
       }; 
 

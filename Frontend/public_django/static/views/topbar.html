@@ -9,22 +9,22 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
+      <li ng-show="show"><a href="#" ng-bind="username"></a</li>
+      <li ng-hide="show"><a href="#" ng-click="login()"><i class="fi-social-google-plus"></i> Sign in with Google</a></li>
+      <li ng-show="show"><a href="#" ng-click="logout()"><i class="fi-power"></i> Logout</a></li>
       <li><a href="#">About</a></li>
     </ul>
 
     <!-- Left Nav Section -->
     <ul class="left">
-      <li ng-hide="show"><a href="#" ng-click="login()"><i class="fi-social-google-plus"></i> Sign in with Google</a></li>
-      <li ng-show="show"><a href="#" ng-click="logout()"><i class="fi-power"></i>Logout</a></li>
+      
       <li><a href="/"><i class="fi-plus"></i> Join existing room</a></li>
       <li>
         <a href="/new"><i class="fi-page-add"></i> Create room</a>
       </li>
       <li class="divider"></li>
-      <li ng-repeat="room in activeRooms">
-        <a ng-attr-href="/{{room._id}}" ng-bind="room.name" class="roomAnchor">
-          <i class="fi-lightbulb" ng-show="room.indicator"></i>
-        </a>
+      <li ng-repeat="room in activeRooms"><a ng-attr-href="/{{room._id}}" ng-bind="room.name">
+        <i class="fi-lightbulb" ng-show="room.indicator"></i></a>
       </li>
     </ul>
   </section>
