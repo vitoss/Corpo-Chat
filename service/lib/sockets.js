@@ -59,12 +59,14 @@ exports.bootstrap = function(io, db) {
             //check if user exists in database
             Users.findOneByEmail(data.author)
                 .then(function userFound(user) {
-                    postMessage(user);
-                }, function userNotFound() {
-                    //create user
-                    var avatar = data.authorAvatar || '';
-                    return Users.post({"email": data.author, "avatar": avatar});
-                }).then(function() {
+                    if(user !== null) {
+                        postMessage(user);
+                    } else {
+                        //create user
+                        var avatar = data.authorAvatar || '';
+                        return Users.post({"email": data.author, "avatar": avatar});
+                    }
+                }).then(function(user) {
                     postMessage(user);
                 });
         });

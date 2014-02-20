@@ -42,7 +42,7 @@ angular.module('corpoApp')
             socket.emit('history', {room: roomId});
           },
           send: function(msg) {
-            socket.emit('msg', {room:roomId, content: msg});
+            socket.emit('msg', {room:roomId, content: msg, author: 'vitotao@gmail.com'});
           }
         };
       },

@@ -151,7 +151,7 @@ vows.describe('Messages API')
             
             socket.on('greetings', function(data) { 
                 console.log('Socket greets'); 
-                var unknownEmail = 'unk'+(new Date())+'@goo.com';
+                var unknownEmail = 'unk'+(new Date()).getTime()+'@goo.com';
                 socket.emit('msg', {room: dataConfig.roomId, content: 'simple message from unknown user', author: unknownEmail}); 
             });
 
