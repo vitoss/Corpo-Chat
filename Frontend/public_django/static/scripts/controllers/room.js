@@ -40,6 +40,8 @@ angular.module('corpoApp')
       session.remove($scope.room);
 
       $location.path('/')
+
+      subscription.unsubscribe();
     };
 
     $scope.close = function closeRoom() {
