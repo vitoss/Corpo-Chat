@@ -36,39 +36,23 @@ exports.bootstrap = function(io, db) {
         });
 
         socket.on('msg', function(data, callback) {
-            var postMessage = function(user) {
-                    //here message creation logic
-                    var message = {
-                                   "room": data.room,
-                                   "content": data.content,
-                                   "author": user._id,
-                                   "date": new Date()
-                                  };
+            //here message creation logic
+            var message = {
+                           "room": data.room,
+                           "content": data.content,
+                           "author": data.author,
+                           "date": new Date()
+                          };
 
-                    Messages.post(message).then(function() {
-                        //broadcast
-                        socket.broadcast.to(data.room).emit('msg', message);
+            Messages.post(message).then(function() {
+                //broadcast
+                socket.broadcast.to(data.room).emit('msg', message);
 
-                        //confirmation
-                        socket.emit('msg', message);
-                    }, function(reason) {
-                        socket.emit('error', reason);
-                    });
-                };
-
-            //check if user exists in database
-            Users.findOneByEmail(data.author)
-                .then(function userFound(user) {
-                    if(user !== null) {
-                        postMessage(user);
-                    } else {
-                        //create user
-                        var avatar = data.authorAvatar || '';
-                        return Users.post({"email": data.author, "avatar": avatar});
-                    }
-                }).then(function(user) {
-                    postMessage(user);
-                });
+                //confirmation
+                socket.emit('msg', message);
+            }, function(reason) {
+                socket.emit('error', reason);
+            });
         });
     });
 };
