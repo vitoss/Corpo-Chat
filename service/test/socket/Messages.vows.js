@@ -8,7 +8,8 @@ var vows = require('vows'),
                     'force new connection': true
                 });
             },
-    dataConfig = require('./../../data/config.js').config;
+    dataConfig = require('./../../data/config.js').config,
+    authorDef = {"email": "test@goo.com", "username":"Some User", "avatar": "SomeAvatar.png"};
 
 // Create a Test Suite
 vows.describe('Messages API')
@@ -45,6 +46,9 @@ vows.describe('Messages API')
         'every message has proper properties': function(err, data) {
             for(var i=0, l=data.messages.length; i<l; i++) {
                 assert.isNotNull(data.messages[i].author);
+                assert.ok(typeof(data.messages[i].author.email) !== 'undefined');
+                assert.ok(typeof(data.messages[i].author.avatar) !== 'undefined');
+                assert.ok(typeof(data.messages[i].author.username) !== 'undefined');
                 assert.isNotNull(data.messages[i].content);
                 assert.isNotNull(data.messages[i].date);
             }
@@ -72,11 +76,10 @@ vows.describe('Messages API')
                 socket = getSocket(),
                 socket2 = getSocket(); 
 
-            socket.on('greetings', function(data) { console.log('Socket 1 greets'); });
+            socket.on('greetings', function(data) { });
             socket.on('msg', function(data) { promise.emit('success', data); });
             socket2.on('greetings', function(data) { 
-                console.log('Socket 2 greets'); 
-                socket2.emit('msg', {room: dataConfig.roomId, content: 'simple message', author: 'admin@goo.com'}); 
+                socket2.emit('msg', {room: dataConfig.roomId, content: 'simple message', author: authorDef}); 
             });
 
             socket.emit('subscribe', {room: dataConfig.roomId});
@@ -110,7 +113,7 @@ vows.describe('Messages API')
                 socket = getSocket(); 
 
             socket.on('error', function(data) { promise.emit('success', data); });
-            socket.emit('msg', {room: 'notexisting', content: 'simple message', author: 'admin@goo.com'});
+            socket.emit('msg', {room: 'notexisting', content: 'simple message', author: authorDef});
             
             return promise;
         },
@@ -128,8 +131,7 @@ vows.describe('Messages API')
             socket.on('msg', function(data) { promise.emit('success', data); });
             
             socket.on('greetings', function(data) { 
-                console.log('Socket greets'); 
-                socket.emit('msg', {room: dataConfig.roomId, content: 'simple message', author: 'admin@goo.com'}); 
+                socket.emit('msg', {room: dataConfig.roomId, content: 'simple message', author: authorDef}); 
             });
 
             socket.emit('subscribe', {room: dataConfig.roomId});
@@ -150,9 +152,9 @@ vows.describe('Messages API')
             socket.on('msg', function(data) { promise.emit('success', data); });
             
             socket.on('greetings', function(data) { 
-                console.log('Socket greets'); 
                 var unknownEmail = 'unk'+(new Date()).getTime()+'@goo.com';
-                socket.emit('msg', {room: dataConfig.roomId, content: 'simple message from unknown user', author: unknownEmail}); 
+                var unknownAuthor = {"email": unknownEmail, "username": "Unknown", "avatar": ""};
+                socket.emit('msg', {room: dataConfig.roomId, content: 'simple message from unknown user', author: unknownAuthor}); 
             });
 
             socket.emit('subscribe', {room: dataConfig.roomId});

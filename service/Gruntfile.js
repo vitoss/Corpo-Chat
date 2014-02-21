@@ -70,7 +70,13 @@ module.exports = function(grunt) {
     },
     vows: {
         all: {
-            src: ["test/**/*.vows.js"]
+          src: ["test/**/*.vows.js"]
+        },
+        rest: {
+          src: ["test/rest/*.vows.js"]
+        },
+        socket: {
+          src: ["test/socket/*.vows.js"]
         }
     },
   });
@@ -91,7 +97,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-vows");
   grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('test', ['node:../lib/hub.js:8881', 'vows'])
+  grunt.registerTask('test', ['node:../lib/hub.js:8881', 'vows:rest', 'vows:socket'])
   grunt.registerTask('check', 'jshint test');
 
   var mongoStartCommand = 'mongo:start:localhost:27018:test:/tmp/mongodbtest';
