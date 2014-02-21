@@ -76,10 +76,9 @@ vows.describe('Messages API')
                 socket = getSocket(),
                 socket2 = getSocket(); 
 
-            socket.on('greetings', function(data) { console.log('Socket 1 greets'); });
+            socket.on('greetings', function(data) { });
             socket.on('msg', function(data) { promise.emit('success', data); });
             socket2.on('greetings', function(data) { 
-                console.log('Socket 2 greets'); 
                 socket2.emit('msg', {room: dataConfig.roomId, content: 'simple message', author: authorDef}); 
             });
 
@@ -132,7 +131,6 @@ vows.describe('Messages API')
             socket.on('msg', function(data) { promise.emit('success', data); });
             
             socket.on('greetings', function(data) { 
-                console.log('Socket greets'); 
                 socket.emit('msg', {room: dataConfig.roomId, content: 'simple message', author: authorDef}); 
             });
 
@@ -154,7 +152,6 @@ vows.describe('Messages API')
             socket.on('msg', function(data) { promise.emit('success', data); });
             
             socket.on('greetings', function(data) { 
-                console.log('Socket greets'); 
                 var unknownEmail = 'unk'+(new Date()).getTime()+'@goo.com';
                 var unknownAuthor = {"email": unknownEmail, "username": "Unknown", "avatar": ""};
                 socket.emit('msg', {room: dataConfig.roomId, content: 'simple message from unknown user', author: unknownAuthor}); 
