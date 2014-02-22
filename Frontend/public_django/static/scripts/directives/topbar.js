@@ -7,12 +7,9 @@ angular.module('corpoApp')
       templateUrl: '/static/views/topbar.html'
     };
   }).controller("topbarCtrl", ['$scope', 'user', function($scope, user) {
-      $scope.show = false;
-
       $.getJSON("/userIsLogged/")
     	 .done(function(data) {
     		if (data[0].isLogged){
-    			$scope.show = true;
                 user.username = data[0].username;
                 user.email = data[0].email;
                 user.avatar = data[0].avatar;
@@ -37,7 +34,6 @@ angular.module('corpoApp')
             user.username = me.name;
             user.email = me.email;
             user.avatar = me.picture;
-            $scope.show = true;
             $scope.$apply();
 		});
 	});
@@ -47,11 +43,11 @@ angular.module('corpoApp')
       $scope.logout = function() {
 	  $.ajax("/logout/" )
 		.done(function() {
-			$scope.show = false;
+			user.email = '';
+            user.username = '';
+            user.avatar = '';
 			$scope.$apply();
           })
       }; 
-
-
   }]);
 

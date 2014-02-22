@@ -4,7 +4,7 @@
   </div>
 </div>   
 
-<div class="row large-12">
+<div class="row large-12" ng-show="userLoggedIn()">
   <div class="row collapse">
     <div class="small-10 columns">
       <input type="text" class="large-10 searchBox" placeholder="Search room" ng-model="searchPhrase" ng-enter="search()" />
@@ -29,5 +29,11 @@
 
   <div class="row progressBar" ng-show="workInProgress">
     Loading rooms...
+  </div>
+</div>
+
+<div ng-hide="userLoggedIn()" class="row large-12">
+  <div class="panel callout radius">
+    Access to Corpo-Chat functionality requires authentication. Please use button in top right corner to log in.
   </div>
 </div>
