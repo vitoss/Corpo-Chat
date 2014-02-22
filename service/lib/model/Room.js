@@ -20,6 +20,7 @@ exports.init = function(db) {
         name : { type: String, required: true },
         owner: { type:  mongoose.Schema.ObjectId, required: true },
         status: { type: Number, required: true },
+        counter: Number,
         created_at : { type: Date },
         keywords: [String]
       };

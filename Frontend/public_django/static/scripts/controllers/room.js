@@ -32,7 +32,9 @@ angular.module('corpoApp')
     $scope.draft = '';
 
     $scope.send = function sendMessage() {
-      subscription.send($scope.draft);
+      if(typeof($scope.draft) !== 'undefined' && $scope.draft.length > 0) {
+        subscription.send($scope.draft);
+      }
       $scope.draft = '';
     };
 
@@ -40,6 +42,8 @@ angular.module('corpoApp')
       session.remove($scope.room);
 
       $location.path('/')
+
+      subscription.unsubscribe();
     };
 
     $scope.close = function closeRoom() {

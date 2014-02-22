@@ -21,14 +21,14 @@ public class LoginUserWhenUserHasNeverAuthenticatedWithGoogleBeforeOnTheMachine 
 	@Test
 	public void testLoginUserWhenUserHasNeverAuthenticatedWithGoogleBeforeOnTheMachine() throws Exception {
 		selenium.open("/");
-		Thread.sleep(NaN);
+		Thread.sleep(3000);
 		selenium.click("link=Sign in with Google");
 		selenium.waitForPopUp("Authorization", "30000");
 		selenium.selectWindow("name=Authorization");
 		selenium.type("id=Email", "corpochat.user@gmail.com");
 		selenium.type("id=Passwd", "corpopassword");
 		selenium.click("id=signIn");
-		Thread.sleep(NaN);
+		Thread.sleep(10000);
 		selenium.selectWindow("null");
 		assertEquals("Corpochat Realuser", selenium.getText("link=Corpochat Realuser"));
 		assertEquals("Welcome to Corpo Chat", selenium.getText("css=html.js body.f-topbar-fixed div.ng-scope div.ng-scope div.row div.large-12 h1"));

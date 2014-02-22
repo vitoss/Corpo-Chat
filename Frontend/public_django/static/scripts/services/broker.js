@@ -33,9 +33,10 @@ angular.module('corpoApp')
 
     return {
       subscribe: function createRoomSubscription(roomId, handler) {
-        socket.emit('subscribe', {room:roomId});
-
-        handlers[roomId] = handler;
+        if(typeof(handlers[roomId]) === 'undefined' || handlers[roomId] === null) {
+          socket.emit('subscribe', {room:roomId});
+          handlers[roomId] = handler;
+        }
 
         return {
           history: function() {
@@ -48,6 +49,10 @@ angular.module('corpoApp')
                 avatar: ''
               }
             });
+          },
+          unsubscribe: function() {
+            socket.emit('unsubscribe', {room: roomId});
+            handlers[roomId] = null;
           }
         };
       },

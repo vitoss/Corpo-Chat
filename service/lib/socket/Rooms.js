@@ -20,7 +20,7 @@ exports.findOne = function(id) {
         }
 
         
-        deferred.resolve();
+        deferred.resolve(doc);
     });
 
     return deferred.promise;
