@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 import java.util.regex.Pattern;
 
 import common.*;
+import login.LoginHelper;
 
 public class PostingWithSpecialCharacters {
 	private Selenium selenium;
@@ -20,6 +21,8 @@ public class PostingWithSpecialCharacters {
 
 	@Test
 	public void testPostingWithSpecialCharacters() throws Exception {
+		LoginHelper.Login(selenium);
+
 		selenium.open(Config.HomePageUrl);
 		for (int second = 0;; second++) {
 			if (second >= 60) fail("timeout");
@@ -35,7 +38,7 @@ public class PostingWithSpecialCharacters {
 		Thread.sleep(1000);
 		selenium.click("css=button.send");
 		Thread.sleep(1000);
-		assertTrue(selenium.getText("css=.message:last-child").matches("^[\\s\\S]*Teスキーに行くのが ooÿüâ éè m[\\s\\S]*$"));
+		assertTrue(selenium.getText("css=.messages:last-child .message-text").matches("^[\\s\\S]*Teスキーに行くのが ooÿüâ éè m[\\s\\S]*$"));
 	}
 
 	@After

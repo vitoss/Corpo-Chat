@@ -3,12 +3,12 @@
   <div data-alert class="alert-box warning" ng-show="room.status == 2">Room is closed. Only history may be viewed.</div>
   <fieldset>
     <legend>Chat box (messages)</legend>
-    <div ng-repeat="msg in messages">
+    <div ng-repeat="msg in messages" class="messages">
 	    <div class="message" ng-class="{light:{{$index}} % 2 == 0, dark:{{$index}} % 2 == 1}">
 	     <div class="message-date" ng-bind="msg.date | date:'yyyy-MM-dd HH:mm:ss'"/>
 	     <div class="message-content">
-		<img ng-src="{{msg.author.avatar+'?sz=75'}}"/>
-	 	<span class="message-text" ng-bind="msg.content" />
+		    <img ng-src="{{msg.author.avatar+'?sz=75'}}"/>
+	 	    <span class="message-text" ng-bind="msg.content" />
 	     </div>
 	     <div class="author-username" ng-bind="msg.author.username"/>
 	    </div>

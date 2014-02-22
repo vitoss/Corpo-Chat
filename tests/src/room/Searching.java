@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 import java.util.regex.Pattern;
 
 import common.*;
+import login.LoginHelper;
 
 public class Searching {
 	private Selenium selenium;
@@ -20,6 +21,8 @@ public class Searching {
 
 	@Test
 	public void testSearching() throws Exception {
+		LoginHelper.Login(selenium);
+
 		selenium.open(Config.HomePageUrl);
 		Thread.sleep(1000);
 		selenium.type("css=.searchBox", "Room 1");

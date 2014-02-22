@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 import java.util.regex.Pattern;
 
 import common.*;
+import login.LoginHelper;
 
 public class PostingOneAfterAnother {
 	private Selenium selenium;
@@ -20,6 +21,8 @@ public class PostingOneAfterAnother {
 
 	@Test
 	public void testPostingOneAfterAnother() throws Exception {
+		LoginHelper.Login(selenium);
+		
 		selenium.open(Config.HomePageUrl);
 		for (int second = 0;; second++) {
 			if (second >= 60) fail("timeout");
@@ -35,12 +38,12 @@ public class PostingOneAfterAnother {
 		Thread.sleep(1000);
 		selenium.click("css=button.send");
 		Thread.sleep(1000);
-		assertTrue(selenium.getText("css=.message:last-child").matches("^[\\s\\S]*Simple test message[\\s\\S]*$"));
+		assertTrue(selenium.getText("css=.messages:last-child .message-text").matches("^[\\s\\S]*Simple test message[\\s\\S]*$"));
 		selenium.type("css=input.msg", "Second simple text");
 		Thread.sleep(1000);
 		selenium.click("css=button.send");
 		Thread.sleep(1000);
-		assertTrue(selenium.getText("css=.message:last-child").matches("^[\\s\\S]*Second simple text[\\s\\S]*$"));
+		assertTrue(selenium.getText("css=.messages:last-child .message-text").matches("^[\\s\\S]*Second simple text[\\s\\S]*$"));
 	}
 
 	@After

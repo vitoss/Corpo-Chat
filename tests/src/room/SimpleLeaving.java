@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 import java.util.regex.Pattern;
 
 import common.*;
+import login.LoginHelper;
 
 public class SimpleLeaving {
 	private Selenium selenium;
@@ -20,6 +21,8 @@ public class SimpleLeaving {
 
 	@Test
 	public void testSimpleLeaving() throws Exception {
+		LoginHelper.Login(selenium);
+
 		selenium.open(Config.HomePageUrl);
 		for (int second = 0;; second++) {
 			if (second >= 60) fail("timeout");

@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 import java.util.regex.Pattern;
 
 import common.*;
+import login.LoginHelper;
 
 public class CreatingHappyPath {
 	private Selenium selenium;
@@ -20,6 +21,8 @@ public class CreatingHappyPath {
 
 	@Test
 	public void testCreatingHappyPath() throws Exception {
+		LoginHelper.Login(selenium);
+
 		selenium.open(Config.HomePageUrl);
 		Thread.sleep(1000);
 		selenium.click("link=Create room");

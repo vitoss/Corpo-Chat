@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 import java.util.regex.Pattern;
 
 import common.*;
+import login.LoginHelper;
 
 public class CreatingNameWithSpecialCharacters {
 	private Selenium selenium;
@@ -20,6 +21,8 @@ public class CreatingNameWithSpecialCharacters {
 
 	@Test
 	public void testCreatingNameWithSpecialCharacters() throws Exception {
+		LoginHelper.Login(selenium);
+
 		selenium.open(Config.HomePageUrl);
 		Thread.sleep(1000);
 		selenium.click("link=Create room");
