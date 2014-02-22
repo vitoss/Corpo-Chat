@@ -6,7 +6,7 @@ angular.module('corpoApp')
       replace: true,
       templateUrl: '/static/views/topbar.html'
     };
-  }).controller("topbarCtrl", ['$scope', 'user', function($scope, user) {
+  }).controller("topbarCtrl", ['$scope', '$location', 'user', function($scope, $location, user) {
       $.getJSON("/userIsLogged/")
     	 .done(function(data) {
     		if (data[0].isLogged){
@@ -46,6 +46,9 @@ angular.module('corpoApp')
 			user.email = '';
             user.username = '';
             user.avatar = '';
+
+            $location.path('/');
+
 			$scope.$apply();
           })
       }; 
