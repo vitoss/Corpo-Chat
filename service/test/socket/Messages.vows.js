@@ -76,14 +76,14 @@ vows.describe('Messages API')
                 socket = getSocket(),
                 socket2 = getSocket(); 
 
-            socket.on('greetings', function(data) { });
+            socket.on('greetings', function(data) {});
             socket.on('msg', function(data) { promise.emit('success', data); });
             socket2.on('greetings', function(data) { 
                 socket2.emit('msg', {room: dataConfig.roomId, content: 'simple message', author: authorDef}); 
             });
 
-            socket.emit('subscribe', {room: dataConfig.roomId});
-            socket2.emit('subscribe', {room: dataConfig.roomId});
+            socket.emit('subscribe', {room: dataConfig.roomId});        
+            socket2.emit('subscribe', {room: dataConfig.roomId});    
             
             return promise;
         },

@@ -35,20 +35,6 @@ exports.bootstrap = function(io, db) {
     Rooms.init(db);
     Users.init(db);
 
-    var updateRoomCounter = function(room) {
-        Rooms.findOne(room).then(function(doc) {
-            doc.counter = getCounter(room);
-            doc.save(function(err) {
-                if(err) {
-                    console.log('Error during saving room with new counter. ' + err);
-                    return;
-                }
-            });
-        }, function(reason) {
-            socket.emit('error', reason);
-        });
-    };
-
     io.sockets.on('connection', function (socket) {
         var subscribedRooms = [];
 
@@ -67,17 +53,9 @@ exports.bootstrap = function(io, db) {
             increaseCounter(data.room);
             subscribedRooms.push(data.room);
 
-            Rooms.findOne(data.room).then(function(doc) {
-                doc.counter = getCounter(data.room);
-                doc.save(function(err) {
-                    if(err) {
-                        console.log('Error during saving room with new counter. ' + err);
-                        return;
-                    }
-
-                    socket.join(data.room);
-                    socket.emit('greetings', {room: data.room, status:0, msg: 'Welcome in room ' + data.room});
-                });
+            Rooms.changeCounter(data.room, 1).then(function(doc) {    
+                socket.join(data.room);
+                socket.emit('greetings', {room: data.room, status:0, msg: 'Welcome in room ' + data.room});
             }, function(reason) {
                 socket.emit('error', reason);
             });
@@ -87,7 +65,7 @@ exports.bootstrap = function(io, db) {
             decreaseCounter(data.room);
             subscribedRooms.splice(subscribedRooms.indexOf(data.room), 1);
 
-            updateRoomCounter(data.room);
+            Rooms.changeCounter(data.room, -1)
 
             socket.leave(data.room);
         });
@@ -121,7 +99,7 @@ exports.bootstrap = function(io, db) {
                 var room = subscribedRooms[i];
 
                 decreaseCounter(room);
-                updateRoomCounter(room);
+                Rooms.changeCounter(room, -1);
             }
 
             subscribedRooms.length = 0;

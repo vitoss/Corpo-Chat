@@ -25,3 +25,27 @@ exports.findOne = function(id) {
 
     return deferred.promise;
 };
+
+exports.changeCounter = function(id, mod) {
+    var deferred = Q.defer();
+
+    var update;
+    if(mod > 0) {
+        update = {$inc: {counter: 1}};
+    } else {
+        update = {$dev: {counter: 1}};
+    }
+
+    //check if room exists
+    Entity.update({"_id": id}, update, {}, function(err, doc) {
+        if(err) {
+            deferred.reject('Room does not exists!');
+            return;
+        }
+
+        
+        deferred.resolve(doc);
+    });
+
+    return deferred.promise;
+};
