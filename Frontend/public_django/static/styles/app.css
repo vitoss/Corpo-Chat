@@ -6,3 +6,49 @@
   color: Red;
   font-weight: bold;
 }
+
+
+
+/* CSS FOR MESSAGE LISTS */
+.message {
+   
+   display: box;
+   margin-top: 5px;
+   margin-bottom: 5px;
+
+}
+
+.light {
+   background-color:#fbfbfb;
+}
+
+.dark {
+   background-color:#efefef;
+}
+
+.message-date{
+    color: gray;
+    font-size: small;
+    padding-left:10px;
+    padding-top:10px;
+
+}
+
+.message-content {
+   padding:10px;
+   display:block;
+   
+}
+
+.message-text {
+  display:inline-block;
+  max-width:90%;
+}
+
+.author-username {
+   color:gray;
+   padding-left:10px;
+   padding-bottom:10px;
+}
+
+
