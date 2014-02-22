@@ -372,9 +372,17 @@ As a Administrator I would like to close any room.
 As a Administrator I would like to moderate messages.
 
   TC032_A
- Step_id           Action                    Results
- 
- 
+ Step_id           Action                                                  Results
+    1      TC00_4
+    2      Click the button "edit"                        Massage open in edit mode
+    3      Change a massage and click button "done"       Edit mode close and Massage modificate
+    
+ TC032_B
+ Step_id           Action                                                  Results
+    1      TC00_4
+    2      Click the button "delete massage"              Massage deleted from textbox
+    
+    
 As a Administartor I would like to manage roles of other users * (give certain permissions).
 
   TC033_A
