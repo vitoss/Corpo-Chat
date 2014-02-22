@@ -7,7 +7,7 @@
 	    <div class="message" ng-class="{light:{{$index}} % 2 == 0, dark:{{$index}} % 2 == 1}">
 	     <div class="message-date" ng-bind="msg.date | date:'yyyy-MM-dd HH:mm:ss'"/>
 	     <div class="message-content">
-		<img ng-src="{{msg.author.avatar}}"/>
+		<img ng-src="{{msg.author.avatar+'?sz=75'}}"/>
 	 	<span class="message-text" ng-bind="msg.content" />
 	     </div>
 	     <div class="author-username" ng-bind="msg.author.username"/>

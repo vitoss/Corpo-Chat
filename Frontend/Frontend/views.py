@@ -10,7 +10,7 @@ def homepage(request):
 def userIsLogged(request):
 	result = []	
 	if ('isLogged' in request.session):
-		result.append({"isLogged":request.session['isLogged'], "username":request.session['username']})
+		result.append({"isLogged":request.session['isLogged'], "username":request.session['username'], "email":request.session['email'], "avatar":request.session['avatar']})
 		return HttpResponse(simplejson.dumps(result), mimetype='application/json')
 	else:
 		result.append({"isLogged":False})
@@ -24,12 +24,24 @@ def login(request):
 	else:
 		username = ""
 
+	if ('email' in request.GET and request.GET['email']):
+        	email = request.GET['email']
+	else:
+		email = ""
+
+	if ('avatar' in request.GET and request.GET['avatar']):
+        	avatar = request.GET['avatar']
+	else:
+		avatar = ""
+
 	if ('isLogged' in request.session):
-		result.append({"isLogged":request.session['isLogged'], "username":request.session['username']})
+		result.append({"isLogged":request.session['isLogged'], "username":request.session['username'], "email":request.session['email'], "avatar":request.session['avatar']})
 		return HttpResponse(simplejson.dumps(result), mimetype='application/json')
 	else:
 		request.session['isLogged'] = True
 		request.session['username'] = username
+		request.session['email'] = email
+		request.session['avatar'] = avatar
 		return HttpResponse("You have logged in successfully")
 
 def logout(request):

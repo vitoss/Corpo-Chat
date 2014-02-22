@@ -6,30 +6,39 @@ angular.module('corpoApp')
       replace: true,
       templateUrl: '/static/views/topbar.html'
     };
-  }).controller("topbarCtrl",function($scope) {
+  }).controller("topbarCtrl", ['$scope', 'user', function($scope, user) {
       $scope.show = false;
 
       $.getJSON("/userIsLogged/")
-	 .done(function(data) {
-		if (data[0].isLogged){
-			$scope.show = true;
-			$scope.username = data[0].username;
-			$scope.$apply();		
-		};	
-	})
+    	 .done(function(data) {
+    		if (data[0].isLogged){
+    			$scope.show = true;
+                user.username = data[0].username;
+                user.email = data[0].email;
+                user.avatar = data[0].avatar;
+    			$scope.$apply();		
+    		};	
+    	});
 
-      $scope.login = function() { 
+    $scope.user = user;
+
+    $scope.login = function() { 
   
 	OAuth.popup('google', function(err, res) {
 		    res.get('/oauth2/v1/userinfo?alt=json').done(function(me) {
+
 			$.ajax({
 				url: "/login/",
-				data: "username="+me.name
+				data: "username="+me.name+'&email=' + me.email + '&avatar=' + me.picture 
 				}).done(function() {
-				    $scope.show = true;
-				    $scope.username= me.name;
-				    $scope.$apply();
-				})
+				    
+				});
+
+            user.username = me.name;
+            user.email = me.email;
+            user.avatar = me.picture;
+            $scope.show = true;
+            $scope.$apply();
 		});
 	});
 		
@@ -44,5 +53,5 @@ angular.module('corpoApp')
       }; 
 
 
-  });
+  }]);
 

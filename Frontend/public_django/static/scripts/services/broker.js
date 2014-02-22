@@ -1,5 +1,6 @@
 angular.module('corpoApp')
-  .factory('broker', ['io', 'socketFactory', 'serviceUrl', function (io, socketFactory, serviceUrl) {
+  .factory('broker', ['io', 'socketFactory', 'serviceUrl', 'user', 
+    function (io, socketFactory, serviceUrl, user) {
 
     var socket = socketFactory({
       ioSocket: io.connect(serviceUrl)
@@ -44,9 +45,9 @@ angular.module('corpoApp')
           },
           send: function(msg) {
             socket.emit('msg', {room:roomId, content: msg, author: {
-                email: 'vitotao@gmail.com',
-                username: 'Witold Wasilewski',
-                avatar: ''
+                email: user.email,
+                username: user.username,
+                avatar: user.avatar
               }
             });
           },
